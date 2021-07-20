@@ -1,0 +1,148 @@
+{% extends 'home/homebase.html' %} {% block content %}
+<nav class="navbar bg-transparent card">
+    <div class="container-fluid">
+        <div class="navbar-holder">
+           
+            <ul class="nav-menu list-unstyled d-flex flex-md-row">
+                
+                <li class="nav-item ">
+                    <form action="" class="form-inline" method="GET">
+                        <div class="form-group">
+                            <span class="form-text">Semester: </span>
+                            {{ qform.academic_year }} 
+                        <button type="submit" class=" btn btn-sm text-dark"><i class="fa fa-search"></i></button>
+                        </div>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+{% if not student_results %}
+{% if query %}
+<section class="section-padding">
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-header h2 text-center text-primary">
+                All Students
+            </div>
+            <div class="card-body table-responsive">
+                <table id="studentstable" class="table table-bordered ">
+                <thead class="thead-light">
+                    <tr>
+                    <th>Full Name</th>
+                    <th>Class </th>
+                    <th>Gender</th>
+                    <th>House</th>
+                    <th>View</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for student in students %}
+                    <tr>
+                        <td>{{ student.full_name }}</td>
+                        <td>{{ student.clas_s }}</td>
+                        <td>{{ student.gender }}</td>
+                        <td>{{ student.house }}</td>
+                        <td>
+                            <form method="POST">{% csrf_token %}
+                                <input type="hidden" name="stu" value="{{student.id}}">
+                                <button type="submit" class="btn text-primary"><i class="fa fa-eye"></i></button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+                </table>
+            </div>
+        </div>
+        {% include 'results/release_report_modal.html' %}
+       {% include 'results/delete_report_modal.html' %}
+    </div>
+</section>
+{% else %}
+<section class="section-padding">
+    <div class="container_fluid text-center text-primary">
+        Please select a Semester/Academic year results you want to view 
+    </div>
+</section>
+{% endif %}
+{% else %}
+
+
+<section class="section-padding">
+    <div class="container">
+        <div class="card p-5 shadow">
+            <div class="row mb-4">
+                <div class="col-3">
+                    
+                </div>
+                 <div class="col-lg-6 text-center">
+                    <div class="h1 text-bold">NORTHERN SCHOOL OF BUSINESS</div>
+                    <div class="small">(Ghana Educational Service)</div>
+                    <div class="text-uppercase">P.O box 482, tamale</div>
+                    <div class="h2 text-bold text-uppercase">Student's Semester Report</div>
+                </div>
+                <div class="col-3">
+                    <img src="{{ student.photo.url }}" class="img-responsive img-fluid" style="height: 180px; width: 180px;">
+                </div>
+            </div>
+           
+            <div class="row">
+                <div class="col-6">
+                    <span class="text-bold">Student ID :</span> {{student.my_id }} <br>
+                    <span class="text-bold">Full Name :</span> {{student.full_name}} <br>
+                    <span class="text-bold">Programme:</span> {{student.clas_s.name}} <br>
+                    <span class="text-bold">Class :</span> {{student.clas_s.name}} {{student.clas_s.section}} <br>
+                    <span class="text-bold">House :</span> {{student.house}} <br>
+                </div>
+                <div class="col-6 text-right">
+                    <span class="text-bold">Academic Year :</span>  {{result_info.academic_year}}<br>
+                    <span class="text-bold">Form/Level :</span> <br>
+                    <span class="text-bold">Semester: </span> {{result_info.semester}} <br>
+            
+                </div>
+            </div>
+            <div class="row mt-5 table-responsive">
+                <table class="table">
+                    <thead class="thead-light">
+                        <tr>
+                        <th>Subjects</th>
+                        <th>Class Score (30%)</th>
+                        <th>Exams Score (70%)</th>
+                        <th>Total Score (100%)</th>
+                        <th>Grade</th>
+                        <th>Position in Subject</th>
+                        <th>Remarks</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for subject in student_results %}
+                        <tr>
+                            <td>{{ subject.subject }}</td>
+                            <td>{{ subject.class_score }}</td>
+                            <td>{{ subject.exam_score }}</td>
+                            <td>{{ subject.total_score }}</td>
+                            <td>{{ subject.grade }}</td>
+                            <td> {{ subject.position_in_subject }} </td>
+                            <td> {{ subject.remarks }} </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                    </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endif %}
+
+{% endblock content %}
+
+{% block morejs %}
+    <script>
+    $('#studentstable').DataTable({
+    });
+    </script>
+
+{% endblock %}  

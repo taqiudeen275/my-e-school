@@ -1,0 +1,63 @@
+    {% extends 'home/homebase.html' %} {% block content %}
+    <section class="section-padding">
+        <div class="container-fluid">
+            <h1 class="text-center m-4">Quick Links</h1>
+            <section class="statistics">
+                <div class="container-fluid">
+                    <div class="row d-flex mb-4">
+                        <div class="col-lg-4" data-aos="flip-left" data-aos-delay="400">
+                          <!-- quick link -->
+                          <div class="card income text-center">
+                            <div class="icon"><i class="icon-padnote"></i></div>
+                           <strong class="text-primary"><a href="{% url 'others:noticeBoard' %}">Notice Board</a></strong>
+                            <p>View the school e-notice board here.</p>
+                          </div>
+                        </div>
+                        <div class="col-lg-4" data-aos="flip-left" data-aos-delay="500">
+                          <!-- quick link -->
+                          <div class="card income text-center">
+                            <div class="icon"><i class="icon-line-chart"></i></div>
+                           <strong class="text-primary"><a href="{% url 'message:studentReportCard' %}">My Report Cards</a></strong>
+                            <p>Get all your report card here</p>
+                          </div>
+                        </div>
+                        <div class="col-lg-4" data-aos="flip-left" data-aos-delay="600">
+                          <!-- quick link -->
+                          <div class="card income text-center">
+                            <div class="icon"><i class="fa fa-user-circle-o"></i></div>
+                           <strong class="text-primary"><a href="{% url 'account:profile' %}">My Profile</a></strong>
+                            <p>Manage your profile here. Change your user type, name, emaiil, profile picture and manay more here.</p>
+                          </div>
+                        </div>
+                    </div>
+                  <div class="row d-flex mb-4">
+                      <div class="col-lg-4" data-aos="flip-left" data-aos-delay="100">
+                        <!-- quick link -->
+                        <div class="card income text-center">
+                          <div class="icon"><i class="icon-rss-feed"></i></div>
+                         <strong class="text-primary"><a href="{% url 'blog:index' %}">Blog</a></strong>
+                          <p>My E-School Blog. The blog gives you update on what is currently happening in th school</p>
+                        </div>
+                      </div>
+                      <div class="col-lg-4" data-aos="flip-left" data-aos-delay="200">
+                        <!-- quick link -->
+                        <div class="card income text-center">
+                          <div class="icon"><i class="icon-user"></i></div>
+                         <strong class="text-primary"><a href="{% url 'others:aboutStaff' %}">About Staff</a></strong>
+                          <p>This Pages provide you with infomation about our teaching staff, example like the year they join the school and more ...</p>
+                        </div>
+                      </div>
+                      <div class="col-lg-4" data-aos="flip-left" data-aos-delay="300">
+                        <!-- quick link -->
+                        <div class="card income text-center">
+                          <div class="icon"><i class="icon-clock"></i></div>
+                         <strong class="text-primary"><a href="{% url 'others:aboutSchool' %}">School History</a></strong>
+                          <p>This page contain the history of our school, it covers history in all aaspect of the school ranging from the school houses, staff, sports, academics, cadet and many more ...</p>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+              </section>
+        </div>
+    </section>
+{% endblock content %}

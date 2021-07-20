@@ -1,0 +1,79 @@
+<div id="add-as" tabindex="-1" role="dialog" aria-labelledby="add-as" aria-hidden="true"
+        class="modal fade text-left" data-backdrop="static">
+    <div role="document" class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 id="exampleModalLabel" class="modal-title">Create About Staff</h5>
+                <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span
+                        aria-hidden="true">×</span></button>
+            </div>
+            <div class="modal-body">
+                <form action="{% url 'others:sas' %}" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ asForm.as_p }}
+                    <input type="submit" class="btn btn-dark" value="Save">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="add-sp" tabindex="-1" role="dialog" aria-labelledby="add-sp" aria-hidden="true"
+        class="modal fade text-left" data-backdrop="static">
+    <div role="document" class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 id="exampleModalLabel" class="modal-title">Create Staff Position</h5>
+                <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span
+                        aria-hidden="true">×</span></button>
+            </div>
+            <div class="modal-body">
+                <form action="{% url 'others:ssp' %}" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ spForm.as_p }}
+                    <input type="submit" class="btn btn-dark" value="Save">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="add-nb" tabindex="-1" role="dialog" aria-labelledby="add-nb" aria-hidden="true"
+        class="modal fade text-left" data-backdrop="static">
+    <div role="document" class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 id="exampleModalLabel" class="modal-title">Post on Notice Board</h5>
+                <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span
+                        aria-hidden="true">×</span></button>
+            </div>
+            <div class="modal-body">
+                <form action="{% url 'others:snb' %}" method="POST" enctype="multipart/form-data" >
+                    {% csrf_token %}
+                    {{ nbForm.media }}
+                    {{ nbForm.as_p }}
+                    <input type="submit" class="btn btn-dark" value="Save">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="add-sh" tabindex="-1" role="dialog" aria-labelledby="add-sh" aria-hidden="true"
+        class="modal fade text-left" data-backdrop="static">
+    <div role="document" class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 id="exampleModalLabel" class="modal-title">Add School History</h5>
+                <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span
+                        aria-hidden="true">×</span></button>
+            </div>
+            <div class="modal-body">
+                <form action="{% url 'others:ssh' %}" method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{ shForm.media }}
+                        {{ shForm.as_p }}
+                        <input type="submit" class="btn btn-dark" value="Save">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,22 @@
+{% extends 'home/homebase.html' %} 
+{% block content %}
+<section class="section-padding">
+    <div class="container-fluid">
+      <div class="row">
+          <div class="col-12 alert p-3">
+              {% if sh %}
+              <h1 class="text-center pb-5" data-aos="flip-left" data-aos-delay="100">School History</h1>
+                      {% for s in sh %}
+                        <a href="{% url 'others:aboutSchoolPost' s.id %}" class="mb-2 p-4 col-12 btn card text-left" data-aos="flip-up" data-aos-delay="500">
+                        
+                          {{s.title}}
+                        </a>
+                      {% endfor %}
+              {% else %}
+              <p class="text-center ">No Post available on the School History</p> <br>
+              {% endif %}
+          </div>  
+      </div>
+    </div>
+  </section>
+    {% endblock content %}

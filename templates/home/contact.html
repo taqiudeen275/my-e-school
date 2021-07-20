@@ -1,0 +1,77 @@
+{% extends 'home/base.html' %} {% block content %}{% load static %}
+<title>Contact</title>
+
+{% include 'home/navbar.html' %}
+{% include 'home/header.html' %}
+<!-- ***** Contact Area Start ***** -->
+<div class="section-padding-100">
+    <div class="container">
+
+        <div class="row m-5">
+            <div class="col-12 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+                <!-- Contact Details -->
+                <div class="contact-details-area">
+                    <div class="section-heading">
+                        <h2>Contact Us</h2>
+                        <p>For more infomation contact us.</p>
+                    </div>
+                    <p>+233243057029<br> atarqiudeen@gmail.com
+                    </p>
+                    <p>Africans Potentials<br> Tamale, Ghana</p>
+                    <p>Open hours: 5.00-18.00 Mon-Sun</p>
+                </div>
+                <!-- Follow Us -->
+                <div class="follow-us-area">
+                    <h2>Follow Us:</h2>
+                    <a href="#" class="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                    <!-- <a href="#" class="instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a> -->
+                </div>
+            </div>
+            <div class="col-12 col-md-6" data-aos="zoom-out" data-aos-delay="400">
+                <!-- Contact Form -->
+                <div class="contact-form-area">
+                    <div class="section-heading">
+                        <h2>Get In Touch With Us!</h2>
+                        <p>Leave your message here.</p>
+                    </div>
+                    <div class="contact-form">
+
+                        <p class="alert-warning">{{ contact_form.non_field_errors }}</p>
+                        <form action="." method="post">{% csrf_token %}
+                            <!-- Message Input Area Start -->
+                            <div class="contact_input_area">
+                                <div class="row">
+                                    <!-- Single Input Area -->
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            {{contact_form.name}}
+                                        </div>
+                                    </div>
+                                    <!-- Single Input Area -->
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            {{contact_form.email}}
+                                        </div>
+                                    </div>
+
+                                    <!-- Single Input Area -->
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            {{contact_form.message}}
+                                        </div>
+                                    </div>
+                                    <!-- Single Input Area -->
+                                    <div class="col-12">
+                                        <button type="submit" class="btn btn-dark">Send Message</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% include 'home/footer.html' %}
+{% endblock content %}

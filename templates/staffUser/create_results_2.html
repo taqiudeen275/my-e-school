@@ -1,0 +1,30 @@
+{% extends 'home/homebase.html' %}
+{% block content %}
+<div class="h1 mt-3 text-primary text-center">
+<p>You selected <b>{{ count }} students</b> from the previous page.</p>
+</div>
+<section class="section-padding">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12  card p-3">
+                <form method="POST">
+                    {% csrf_token %}
+
+                    {{ form.non_field_errors }}
+
+                    <div class="form-group row">
+                    {{ form.session.errors }}
+                    <label class="col-2" for="{{ form.result_for.id_for_label }}">Result For</label>
+                    <div class="col">{{ form.result_for }}</div>
+                    </div>
+                    <input type="hidden" name="finish" value="True">
+                    <input type="hidden" name="students" value="{{ students }}">
+
+                    <input type="submit" class="btn btn-success" value="Create">
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}

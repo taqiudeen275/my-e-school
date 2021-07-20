@@ -1,0 +1,292 @@
+{% extends 'home/homebase.html' %} 
+{% block content %}
+{% include 'academics/menubar.html' %}
+{% include 'academics/modals.html' %}
+
+
+<section class="section-padding">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4 alert card p-3 alert-dismissible" role="alert">
+                {% if programs %}
+                <h2 class='text-center  mb-3'>Programs</h2>  
+                <ul>
+                {% for program in programs %}
+                <a  class="mb-2 text-white btn btn-primary"  data-toggle="modal" data-target="#program{{program.id}}">
+                    {{ program.name }}</a>
+                    {% include 'academics/programdeleteModal.html' %}
+                {% endfor %}
+                </ul>
+                <button type="button" class="close btn-primary" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+                {% else %}
+                <p class="text-center">No Program Available</p> <br>
+                <button type="button" data-toggle="modal" data-target="#add-program" class="btn btn-primary">
+                    <i class="fa fa-plus"></i> Add Program  
+                </button> 
+                {% endif %}
+            </div>
+            <div class="col-md-4 alert card p-3 alert-dismissible" role="alert">
+                {% if levels %}
+                <h2 class='text-center mb-2'>Levels</h2>  
+                <ul>
+                {% for level in levels %}
+                <a  class="mb-2 text-white btn btn-primary"  data-toggle="modal" data-target="#level{{level.id}}">
+                    {{ level.name }}</a>
+                    {% include 'academics/leveldeleteModal.html' %}
+                {% endfor %}
+                </ul>
+                <button type="button" class="close btn-primary" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+                {% else %}
+                <p class="text-center ">No Level or Form Available</p> <br>
+                <button type="button" data-toggle="modal" data-target="#add-level" class="btn btn-primary">
+                    <i class="fa fa-plus"></i> Add Level  
+                </button> 
+                {% endif %}
+            </div>
+            <div class="col-md-4 alert  card p-3 alert-dismissible" role="alert">
+                {% if semesters %}
+                <h2 class='text-center mb-3'>Semesters</h2>  
+                <ul>
+                {% for semester in semesters %}
+                <a  class="mb-2 text-white btn btn-primary"  data-toggle="modal" data-target="#semester{{semester.id}}">
+                    {{ semester.name }}</a>
+                    {% include 'academics/semesterdeleteModal.html' %}
+                {% endfor %}
+                </ul>
+                <button type="button" class="close btn-primary" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+                {% else %}
+                
+                <p class="text-center">No Semester Available</p> <br>
+                <button type="button" data-toggle="modal" data-target="#add-semester" class="btn btn-primary">
+                    <i class="fa fa-plus"></i> Add Semester 
+                </button> 
+                {% endif %}
+            </div> 
+        </div>
+        <div class="row" >
+            <div class="col-md-6 alert card p-3 alert-dismissible" role="alert" >
+                {% if academic_years %}
+                <h2 class='text-center mb-3'>Academic Year</h2>  
+                <ul>
+                {% for ay in academic_years %}
+                <a  class="mb-2 text-white btn btn-primary"  data-toggle="modal" data-target="#ay{{ay.id}}">
+                    {{ ay.name }}</a>
+                    {% include 'academics/aydeleteModal.html' %}
+                {% endfor %}
+                </ul>
+                <button type="button" class="close btn-primary" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+                {% else %}
+
+                <p class="text-center text-primary">No Academic Year Available</p> <br>
+                <button type="button" data-toggle="modal" data-target="#add-ay" class="btn btn-primary">
+                    <i class="fa fa-plus"></i> Add Academic Year 
+                </button> 
+                {% endif %}
+            </div> 
+            <div class="col-md-6 alert card p-3 alert-dismissible" role="alert" >
+                {% if batches %}
+                <h2 class='text-center mb-3'>Batch</h2>  
+                <ul>
+                {% for batch in batches %}
+                   <a  class="mb-2 text-white btn btn-primary"  data-toggle="modal" data-target="#batch{{batch.id}}">
+                    {{ batch.name }}</a>
+                    {% include 'academics/batchdeleteModal.html' %}
+                {% endfor %}
+                </ul>
+                <button type="button" class="close btn-primary" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+                {% else %}
+               
+                <p class="text-center text-primary">No Batch Available</p> <br>
+                <button type="button" data-toggle="modal" data-target="#add-batch" class="btn btn-primary">
+                    <i class="fa fa-plus"></i> Add Batch 
+                </button> 
+                {% endif %}
+            </div> 
+        </div>
+        <div class="row">
+            <div class="col-12 alert card p-3 alert-dismissible" role="alert">
+                {% if subjects %}
+                <h2 class='text-center mb-3'>Subjects</h2>  
+                <ul>
+                {% for subject in subjects %}
+                    
+                        <a  class="mb-2 text-white btn btn-primary"  data-toggle="modal" data-target="#subject{{subject.id}}">
+                         {{ subject.name }}</a>
+                         {% include 'subjectdeleteModal.html' %}
+                    
+                {% endfor %}
+                </ul>
+                <button type="button" class="close btn-primary" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+                {% else %}
+        
+                <p class="text-center text-primary">No Subject Available</p> <br>
+                <button type="button" data-toggle="modal" data-target="#add-subject" class="btn btn-primary">
+                    <i class="fa fa-plus"></i> Add Academic Year 
+                </button> 
+                {% endif %}
+            </div> 
+            
+        </div>
+        <div class="row">
+            <div class="col-12 alert card p-3 alert-dismissible" role="alert">
+                {% if result_for %}
+                <h2 class='text-center mb-3'>Results</h2>  
+                <ul>
+                {% for resultfor in result_for %}
+                    
+                        <a  class="mb-2 text-white btn btn-primary"  data-toggle="modal" data-target="#resultfor{{resultfor.id}}">
+                         {{ resultfor }}</a>
+                         {% include 'academics/deleteresult.html' %}
+                    
+                {% endfor %}
+                </ul>
+                <button type="button" class="close btn-primary" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+                {% else %}
+                
+                <p class="text-center text-primary">No Result Available</p> <br>
+                <button type="button" data-toggle="modal" data-target="#create-result" class="btn btn-primary">
+                    <i class="fa fa-plus"></i> Add Academic Year 
+                </button> 
+                {% endif %}
+            </div> 
+            
+        </div>
+        <div class="row">
+            <div class="col-12 alert card p-3 alert-dismissible" role="alert">
+                {% if staffId %}
+                <h1 class="card-header text-center">Staff Id</h1>
+                <div class="table-responsive">
+                    <table id="classestable" class="table table-bordered table-hover" data-page-length='100'>
+                      <thead class="thead-light">
+                        <tr>
+                          <th>Staff Id Code
+                          </th>
+                          <th>Current</th>
+                          <th>Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                
+                        {% for staffid in staffId %}
+                          <tr>
+                            <td>{{ staffid.name }} </td>
+                            <td>{{ staffid.current }} </td>
+                            <td>{% include 'academics/staffidModal.html' %}</td>
+                          </tr>
+                        {% endfor %}
+                
+                      </tbody>
+                    </table>
+                </div>
+                <button type="button" class="close btn-primary" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+                {% else %}
+                <p class="text-center ">No Staff Id Available</p> <br>
+                <button type="button" data-toggle="modal" data-target="#add-staffid" class="btn btn-primary">
+                    <i class="fa fa-plus"></i> Add Staff Id 
+                </button> 
+                {% endif %}
+            </div>  
+        </div>
+        <div class="row">
+            <div class="col-12 alert card p-3 alert-dismissible" role="alert">
+                {% if houses %}
+                <h2 class='text-center mb-3'>Houses</h2>  
+                <ul>
+                {% for house in houses %}
+                    
+                        <a  class="mb-2 text-white btn btn-primary"  data-toggle="modal" data-target="#house{{house.id}}">
+                         {{ house.name }}</a>
+                         {% include 'academics/housedeleteModal.html' %}
+                    
+                {% endfor %}
+                </ul>
+                <button type="button" class="close btn-primary" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+                {% else %}
+                <div>
+                    
+                </div>
+                <p class="text-center text-primary">No House Available</p> <br>
+                <button type="button" data-toggle="modal" data-target="#add-house" class="btn btn-primary">
+                    <i class="fa fa-plus"></i> Add House Year 
+                </button> 
+                {% endif %}
+            </div> 
+            
+        </div>
+        <div class="row">
+            <div class="col-12 alert card p-3 alert-dismissible" role="alert">
+                {% if classes %}
+                <h1 class="card-header text-center">Classes</h1>
+                <div class="table-responsive">
+                    <table id="classestable" class="table table-bordered table-hover" data-page-length='100'>
+                      <thead class="thead-light">
+                        <tr>
+                          <th>Program
+                          </th>
+                          <th>Section</th>
+                          <th>Batch</th>
+                          <th>track</th>
+                          <th>Date Created</th>
+                          <th>Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                
+                        {% for clas in classes %}
+                          <tr>
+                            
+                            <td>{{ clas.name }} </td>
+                            <td>{{ clas.section }}</td>
+                            <td>{{ clas.batch }}</td>
+                            <td>{{ clas.track}}</td>
+                            <td>{{ clas.date}}</td>
+                            <td>{% include 'academics/classdeleteModal.html' %}</td>
+                           
+                          </tr>
+                        {% endfor %}
+                
+                      </tbody>
+                    </table>
+                </div>
+                <button type="button" class="close btn-primary" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+                {% else %}
+                <p class="text-center ">No Class Available</p> <br>
+                <button type="button" data-toggle="modal" data-target="#add-class" class="btn btn-primary">
+                    <i class="fa fa-plus"></i> Add Class 
+                </button> 
+                {% endif %}
+            </div>  
+        </div>
+    </div>
+</section>
+
+
+{% endblock content %}
+
+{% block morejs %}
+    <script>
+    $('#classestable').DataTable({
+    });
+    </script>
+
+{% endblock %}  

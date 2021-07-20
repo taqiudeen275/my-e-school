@@ -1,0 +1,74 @@
+{% extends 'home/homebase.html' %} 
+{% block content %}
+{% include 'student/menubar.html' %}
+{% include 'student/modals.html' %}
+
+
+<section class="section-padding">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12  card p-3">
+                {% if students %}
+                <h1 class="card-header text-center">Students</h1>
+                <div class="table-responsive">
+                    <table id="studentstable" class="table table-bordered table-hover" data-page-length='100'>
+                      <thead class="thead-light">
+                        <tr>
+                          <th>First Name</th>
+                          <th>Last Name</th>
+                          <th>Middle Name</th>
+                          <th>Gender</th>
+                          <th>Class</th>
+                          <th>Accomodation</th>
+                          <th>house </th>
+                          <th>Action </th>
+
+                        </tr>
+                      </thead>
+                      <tbody>
+                
+                        {% for student in students %}
+                          <tr>
+                            <td>{{ student.first_name }} </td>
+                            <td>{{ student.last_name }}</td>
+                            {% if student.middle_name %}
+                            <td>{{ student.middle_name }}</td>
+                            {% else %}
+                            <td> - </td>
+                            {% endif %}
+                            <td>{{ student.gender }}</td>
+                            <td>{{ student.clas_s}}</td>
+                            <td>{{ student.accomodation}}</td>
+                            <td>{{ student.house}}</td>
+                            <td>{% include 'student/studentdeleteModal.html' %}
+                                 <a href="{% url 'student:us' student.id %}" class="text-primary btn"><i class="fa fa-pencil"></i></a> 
+                                 <a href="{% url 'student:student' student.id %}"><i class="fa fa-eye"></i></a>
+                            </td>
+                           
+                          </tr>
+                        {% endfor %}
+                
+                      </tbody>
+                    </table>
+                </div>
+                {% else %}
+                <p class="text-center ">No Student Available</p> <br>
+                <button type="button" data-toggle="modal" data-target="#add-student" class="btn btn-primary">
+                    <i class="fa fa-plus"></i> Add Student 
+                </button> 
+                {% endif %}
+            </div>  
+        </div>
+    </div>
+</section>
+
+
+{% endblock content %}
+
+{% block morejs %}
+    <script>
+    $('#studentstable').DataTable({
+    });
+    </script>
+
+{% endblock %}  

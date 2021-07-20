@@ -1,0 +1,93 @@
+{% extends 'home/homebase.html' %}
+{% block content %}
+<nav class="navbar bg-transparent card">
+    <div class="container-fluid">
+        <div class="navbar-holder">
+           
+            <ul class="nav-menu list-unstyled d-flex flex-md-row">
+                
+                <li class="nav-item ">
+                    <form action="" class="form-inline" method="GET">
+                        <div class="form-group">
+                            <span class="form-text">Semester: </span>
+                            {{ qform.academic_year }} 
+                        <button type="submit" class=" btn btn-sm text-dark"><i class="fa fa-search"></i></button>
+                        </div>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+{% if ay %}
+<section class="section-padding">
+    <div class="container-fluid">
+        
+        <div class="card">
+            <div class="card-header h2 text-center text-primary">
+                {{staff.subject_taught}} Results
+            </div>
+            <div class="card-body table-responsive">
+                <table id="resultstable" class="table table-bordered">
+                <thead class="thead-light">
+                    <tr>
+                    <th>Student</th>
+                    <th>Class</th>
+                    <th>Class Score (30%) </th>
+                    <th>Exam Score (70%) </th>
+                    <th>Total Score (100%)</th>
+                    <th>Position</th>
+                    <th>Grade</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for key, result in results.items %}
+                    {% for subject in result.subjects %}
+                    <tr>
+                        <td>{{result.student}}</td>
+                        <td>{{ subject.clas_s }}</td>
+                        <td>{{ subject.class_score }}</td>
+                        <td>{{ subject.exam_score }}</td>
+                        <td>{{ subject.total_score }}</td>
+                        <td>{{ subject.position_in_subject }}</td>
+                        <td>{{ subject.grade }}</td>
+                    </tr>
+                    {% endfor %}{% endfor %}
+                </tbody>
+                </table>
+
+            </div>
+        </div>
+        {% if results %}
+        <a href="{% url 'staffUser:fill_scores' result_for %}" class="btn btn-primary">Edit</a>
+        <a href="{% url 'staffUser:completed' result_for %}" class="btn btn-success">Create Positions</a>
+        {% endif %}
+    </div>
+</section>
+{% else %}
+<section class="section-padding">
+    <div class="container_fluid text-center text-primary">
+        Please select a Semester result you want to view 
+    </div>
+</section>
+{% endif %}
+
+{% endblock content %}
+{% block morejs %}
+<script>
+    $('#resultstable').DataTable({
+      "ordering": false
+    });
+
+  $("#selecter").change(function () {
+    if (this.checked) {
+      $('input[name="students"]').prop('checked', true);
+    }
+    else {
+      $('input[name="students"]').prop('checked', false);
+    }
+  });
+</script>
+
+{% endblock morejs %}

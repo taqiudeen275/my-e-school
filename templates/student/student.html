@@ -1,0 +1,111 @@
+{% extends 'home/homebase.html' %} 
+{% block content %}
+{% include 'student/modals.html' %}
+
+<nav class="navbar bg-transparent card ">
+    <div class="container-fluid">
+        <div class="navbar-holder">
+           
+            <ul class="nav-menu list-unstyled d-flex flex-md-row">
+                <li class="nav-item ">
+                    <a href="{% url 'student:students' %}" class="btn text-dark"><i class="fa fa-user"></i> All Students</a>
+                </li>
+            
+                <li class="nav-item">
+                    <button type="button" data-toggle="modal" data-target="#add-student" class="btn text-dark">
+                        <i class="fa fa-plus"></i> Add Student  
+                    </button>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</nav>
+ <div class="text-center text-primary h1 text-uppercase">{{ student.full_name }}</div>
+<section class="section-padding">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 card p-3 ">
+                 
+               <div class="card-body text-center">
+
+                   {% if student.photo %}
+                   <div class="text-right">
+                       <img src="{{ student.photo.url }}" style="widows: 250px; height: 250px;" alt="{{student}} photo" class="img-responsive card-thumbnail rounded">
+                   </div>
+                    {% endif %}
+                    
+                   <div class="m-3 col-6 table-responsive">
+                        <table  class="table table-borderless table-responsive text-left" data-page-length='100'>
+                            <tbody>
+                                {% if student.user %}
+                                <tr>
+                                    <td class="text-bold">User account: </td>
+                                    <td>{{ staff.user }}</td>
+                                </tr>
+                                {% endif %}
+                                <tr>
+                                    <td class="text-bold">ID: </td>
+                                    <td>{{ student.my_id }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-bold">First Name: </td>
+                                    <td>{{ student.first_name }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-bold">Last Name: </td>
+                                    <td>{{ student.last_name }}</td>
+                                </tr>
+                                {% if student.middle_name %}
+                                <tr>
+                                    <td class="text-bold">Middle Name: </td>
+                                    <td>{{ student.middle_name }}</td>
+                                </tr>
+                                {% endif %}
+                                <tr>
+                                    <td class="text-bold">Gender: </td>
+                                    <td>{{ student.gender }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-bold">Phone Number: </td>
+                                    <td>{{ student.phone_number }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-bold">Email: </td>
+                                    <td>{{ student.email }}</td>
+                                </tr>
+                                {% if staff.date_of_birth %}
+                                <tr>
+                                    <td class="text-bold">Date of Birth: </td>
+                                    <td>{{ student.date_of_birth }}</td>
+                                </tr>
+                                {% endif %}
+                                <tr>
+                                    <td class="text-bold">Accomodation: </td>
+                                    <td>
+                                        {{student.accomodation}} 
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-bold">House: </td>
+                                    <td>{{ student.house }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-bold">Class: </td>
+                                    <td>{{ student.clas_s }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-bold">Batch: </td>
+                                    <td>{{ student.batch }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                   </div>
+               </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock content %}

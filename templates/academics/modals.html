@@ -1,0 +1,226 @@
+<div id="add-program" tabindex="-1" role="dialog" aria-labelledby="add-program" aria-hidden="true"
+        class="modal fade text-left" data-backdrop="static">
+    <div role="document" class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 id="exampleModalLabel" class="modal-title">Add Program or Course</h5>
+                <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span
+                        aria-hidden="true">×</span></button>
+            </div>
+            <div class="modal-body">
+                <form action="{% url 'academics:sp' %}" method="POST" enctype="multipart/form-data" id="StudentRegistrationForm">
+                    {% csrf_token %}
+                    {{ programForm.as_p }}
+                    <input type="submit" class="btn btn-dark" value="Save">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="add-level" tabindex="-1" role="dialog" aria-labelledby="add-level" aria-hidden="true"
+        class="modal fade text-left" data-backdrop="static">
+    <div role="document" class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 id="exampleModalLabel" class="modal-title">Add Level or Form</h5>
+                <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span
+                        aria-hidden="true">×</span></button>
+            </div>
+            <div class="modal-body">
+                <form action="{% url 'academics:sl' %}" method="POST" enctype="multipart/form-data" id="StudentRegistrationForm">
+                    {% csrf_token %}
+                    {{ levelForm.as_p }}
+                    <input type="submit" class="btn btn-dark" value="Save">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="add-class" tabindex="-1" role="dialog" aria-labelledby="add-class" aria-hidden="true"
+        class="modal fade text-left" data-backdrop="static">
+    <div role="document" class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 id="exampleModalLabel" class="modal-title">Add Class</h5>
+                <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span
+                        aria-hidden="true">×</span></button>
+            </div>
+            <div class="modal-body">
+                <form action="{% url 'academics:sc' %}" method="POST" enctype="multipart/form-data" id="classForm">
+                    {% csrf_token %}
+                    {{ classForm.as_p }}
+                    <input type="submit" class="btn btn-dark" value="Save">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="create-result" tabindex="-1" role="dialog" aria-labelledby="create-result" aria-hidden="true"
+        class="modal fade text-left" data-backdrop="static">
+    <div role="document" class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 id="exampleModalLabel" class="modal-title">Create Result</h5>
+                <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span
+                        aria-hidden="true">×</span></button>
+            </div>
+            <div class="modal-body">
+                <form action="{% url 'academics:sr' %}" method="POST" enctype="multipart/form-data" id="classForm">
+                    {% csrf_token %}
+                    {{ creatResultForm.as_p }}
+                    <input type="submit" class="btn btn-dark" value="Create">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="add-batch" tabindex="-1" role="dialog" aria-labelledby="add-batch" aria-hidden="true"
+        class="modal fade text-left" data-backdrop="static">
+    <div role="document" class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 id="exampleModalLabel" class="modal-title">Add Batch</h5>
+                <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span
+                        aria-hidden="true">×</span></button>
+            </div>
+            <div class="modal-body">
+                <form action="{% url 'academics:sb' %}" method="POST" enctype="multipart/form-data" id="StudentRegistrationForm">
+                        {% csrf_token %}
+                        {{ batchForm.as_p }}
+                        <input type="submit" class="btn btn-dark" value="Save">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="add-semester" tabindex="-1" role="dialog" aria-labelledby="add-semester" aria-hidden="true"
+        class="modal fade text-left" data-backdrop="static">
+    <div role="document" class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 id="exampleModalLabel" class="modal-title">Add Semester or Term</h5>
+                <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span
+                        aria-hidden="true">×</span></button>
+            </div>
+            <div class="modal-body">
+                <form action="{% url 'academics:ss' %}" method="POST" enctype="multipart/form-data" id="StudentRegistrationForm">
+                    {% csrf_token %}
+                    {{ semesterForm.as_p }}
+                    <input type="submit" class="btn btn-dark" value="Save">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="add-ay" tabindex="-1" role="dialog" aria-labelledby="add-ay" aria-hidden="true"
+        class="modal fade text-left" data-backdrop="static">
+    <div role="document" class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 id="exampleModalLabel" class="modal-title">Add Academic Year</h5>
+                <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span
+                        aria-hidden="true">×</span></button>
+            </div>
+            <div class="modal-body">
+                <form action="{% url 'academics:sa' %}" method="POST" enctype="multipart/form-data" id="StudentRegistrationForm">
+                    {% csrf_token %}
+                    {{ academic_yearForm.as_p }}
+                    <input type="submit" class="btn btn-dark" value="Save">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="add-subjects" tabindex="-1" role="dialog" aria-labelledby="add-subjects" aria-hidden="true"
+        class="modal fade text-left" data-backdrop="static">
+    <div role="document" class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 id="exampleModalLabel" class="modal-title">Add Subject</h5>
+                <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span
+                        aria-hidden="true">×</span></button>
+            </div>
+            <div class="modal-body">
+                <form action="{% url 'academics:ssj' %}" method="POST" enctype="multipart/form-data" id="StudentRegistrationForm">
+                    {% csrf_token %}
+                    {{ subjectForm.as_p }}
+                    <input type="submit" class="btn btn-dark" value="Save">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="add-house" tabindex="-1" role="dialog" aria-labelledby="add-house" aria-hidden="true"
+        class="modal fade text-left" data-backdrop="static">
+    <div role="document" class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 id="exampleModalLabel" class="modal-title">Add Subject</h5>
+                <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span
+                        aria-hidden="true">×</span></button>
+            </div>
+            <div class="modal-body">
+                <form action="{% url 'academics:sh' %}" method="POST" enctype="multipart/form-data" id="StudentRegistrationForm">
+                    {% csrf_token %}
+                    {{ houseForm.as_p }}
+                    <input type="submit" class="btn btn-dark" value="Save">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="add-info" tabindex="-1" role="dialog" aria-labelledby="add-info" aria-hidden="true"
+        class="modal fade text-left" >
+    <div role="document" class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 id="exampleModalLabel" class="modal-title">Help</h5>
+                <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span
+                        aria-hidden="true">×</span></button>
+            </div>
+            <div class="modal-body">
+                <p>Click on an item to delete it</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="add-staffid" tabindex="-1" role="dialog" aria-labelledby="add-house" aria-hidden="true"
+        class="modal fade text-left" data-backdrop="static">
+    <div role="document" class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 id="exampleModalLabel" class="modal-title">Add Staff Identication code</h5>
+                <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span
+                        aria-hidden="true">×</span></button>
+            </div>
+            <div class="modal-body">
+                <form action="{% url 'academics:ssid' %}" method="POST" enctype="multipart/form-data" >
+                    {% csrf_token %}
+                    {{ staffIdform.as_p }}
+                    <input type="submit" class="btn btn-dark" value="Save">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="change-class" tabindex="-1" role="dialog" aria-labelledby="add-house" aria-hidden="true"
+        class="modal fade text-left" data-backdrop="static">
+    <div role="document" class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 id="exampleModalLabel" class="modal-title">Change Classes</h5>
+                <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span
+                        aria-hidden="true">×</span></button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to change all stuent class?
+                <a class="btn btn-primary" href="{% url 'academics:changeClass' %}">Yes</a>
+                <a  data-dismiss="modal" aria-label="Close" class="close btn btn-ddanger">No</a>
+            </div>
+        </div>
+    </div>
+</div>

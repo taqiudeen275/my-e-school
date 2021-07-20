@@ -1,0 +1,27 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="section-padding">
+    <div class="container-fluid text-center">
+       
+            <div class="col-12 ">
+                <h1 class="text-primary">
+                    Student Registration
+                </h1>
+                <small class="text-primary">Enter your student ID to confirm you are a student, your ID will be given to you in the school to register</small>
+            </div>
+       
+            <p>If you are not a parent click here to change your user type {% include 'staffUser/changeModal.html' %}.</p>
+        
+            <div class="col-12 m-5">
+                <form class="form-inline " action="{% url 'studentUser:verify' %}" method="POST">
+                    {{sform}} {% csrf_token %}
+                    <input class="btn btn-primary mt-2" type="submit" value="Submit">
+                </form>
+            </div>
+  </div>
+</section>
+  {% endblock %}
+
+  

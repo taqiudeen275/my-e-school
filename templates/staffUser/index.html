@@ -1,0 +1,158 @@
+{% extends 'home/homebase.html' %} {% block content %}
+
+<section class="section-padding">
+    <div class="container-fluid">
+        <h1 class="text-center m-4">Quick Links</h1>
+        <section class="statistics">
+            <div class="container-fluid">
+              <div class="row d-flex mb-4">
+                  <div class="col-lg-4" data-aos="flip-left" data-aos-delay="100">
+                    <!-- quick link -->
+                    <div class="card income text-center">
+                      <div class="icon"><i class="icon-rss-feed"></i></div>
+                     <strong class="text-primary"><a href="{% url 'blog:index' %}">Blog</a></strong>
+                      <p>My E-School Blog. The blog gives you update on what is currently happening in th school</p>
+                    </div>
+                  </div>
+                  <div class="col-lg-4" data-aos="flip-left" data-aos-delay="200">
+                    <!-- quick link -->
+                    <div class="card income text-center">
+                      <div class="icon"><i class="icon-user"></i></div>
+                     <strong class="text-primary"><a href="{% url 'others:aboutStaff' %}">About Staff</a></strong>
+                      <p>This Pages provide you with infomation about our teaching staff, example like the year they join the school and more ...</p>
+                    </div>
+                  </div>
+                  <div class="col-lg-4" data-aos="flip-left" data-aos-delay="300">
+                    <!-- quick link -->
+                    <div class="card income text-center">
+                      <div class="icon"><i class="icon-clock"></i></div>
+                     <strong class="text-primary"><a href="{% url 'others:aboutSchool' %}">School History</a></strong>
+                      <p>This page contain the history of our school, it covers history in all aaspect of the school ranging from the school houses, staff, sports, academics, cadet and many more ...</p>
+                    </div>
+                  </div>
+              </div>
+              <div class="row d-flex mb-4">
+                  <div class="col-lg-4" data-aos="flip-left" data-aos-delay="400">
+                    <!-- quick link -->
+                    <div class="card income text-center">
+                      <div class="icon"><i class="icon-bars"></i></div>
+                     <strong class="text-primary"><a href="{% url 'staffUser:allResults' %}">All Results</a></strong>
+                      <p>View all your students results  here. you can sort by class or semester and also studeent name as well</p>
+                    </div>
+                  </div>
+                  <div class="col-lg-4" data-aos="flip-left" data-aos-delay="500">
+                    <!-- quick link -->
+                    <div class="card income text-center">
+                      <div class="icon"><i class="icon-line-chart"></i></div>
+                     <strong class="text-primary"><a href="{% url 'staffUser:createResults' %}">Enter Resulsts</a></strong>
+                      <p>Enter Students semester scores here. Select the students and semester and proceed to the students scores form and fill each studetns score there</p>
+                    </div>
+                  </div>
+                  <div class="col-lg-4" data-aos="flip-left" data-aos-delay="600">
+                    <!-- quick link -->
+                    <div class="card income text-center">
+                      <div class="icon"><i class="fa fa-user-circle-o"></i></div>
+                     <strong class="text-primary"><a href="{% url 'account:profile' %}">My Profile</a></strong>
+                      <p>Manage your profile here. Change your user type, name, emaiil, profile picture and manay more here.</p>
+                    </div>
+                  </div>
+              </div>
+              {% if staff.is_form_master %}
+                <div class="row d-flex">
+                <div class="col-lg-6" data-aos="flip-left" data-aos-delay="400">
+                  <!-- quick link -->
+                  <div class="card income text-center">
+                    <div class="icon"><i class="icon-form"></i></div>
+                   <strong class="text-primary"><a href="{% url 'results:createAbouts' %}">Enter Students Remark</a></strong>
+                    <p>This page is specifically for Form masters and mistress. Enter your students remarks for their report card</p>
+                  </div>
+                </div>
+                <div class="col-lg-6" data-aos="flip-left" data-aos-delay="500">
+                  <!-- quick link -->
+                  <div class="card income text-center">
+                    <div class="icon"><i class="icon-bars"></i></div>
+                   <strong class="text-primary"><a href="{% url 'results:all_about' %}">All Remarks</a></strong>
+                    <p>This page is specifically for Form masters and mistress. View and edit your students remarks for their report card</p>
+                  </div>
+                </div>
+               
+                </div>
+              {% endif %}
+            </div>
+          </section>
+    </div>
+</section>
+<section class="section-padding">
+    <div class="container-fluid">
+        {% if user.is_superuser %}
+            <div class="row text-white">
+                <div class="card col-md-2 mr-4 text-center p-4 bg-secondary rounded shadow" data-aos="flip-left" data-aos-delay="100">
+                    <i class="icon-user"></i>  <br>
+                    TOTAL USERS <br>{{tu}}
+                </div>
+                <div class="card col-md-2 mr-4 text-center p-4 bg-primary rounded shadow" data-aos="flip-left" data-aos-delay="200">
+                    <i class="icon-user"></i>  <br>
+                    TOTAL STAFF <br>{{tstaff}}
+                </div>
+                <div class="card col-md-2 mr-4 text-center p-4 bg-success rounded shadow" data-aos="flip-left" data-aos-delay="300">
+                    <i class="icon-user"></i>  <br>
+                    TOTAL STUDENTS <br>{{ts}}
+                </div>
+                <div class="card col-md-2 mr-4 text-center p-4 bg-warning rounded shadow" data-aos="flip-left" data-aos-delay="400">
+                    <i class="icon-user"></i>  <br>
+                    TOTAL PARENT USERS <br>{{tp}}
+                </div>
+                <div class="card col-md-2 mr-4 text-center p-4 bg-info rounded shadow" data-aos="flip-left" data-aos-delay="500">
+                    <i class="icon-user"></i>  <br>
+                    TOTAL GUEST USERS <br>{{tg}}
+                </div>
+            </div>
+            <div class="row">
+                <canvas id="myChart" class="col-12" data-aos="flip-left" data-aos-delay="600"></canvas>
+            </div>
+            {% endif %}
+        
+    </div>
+</section>
+
+
+{% endblock content %}
+
+{% block morejs %}
+<script>
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: ['Staff User', 'Student Users', 'Parent User', 'Guest User'],
+            datasets: [{
+                label: 'Users',
+                data: [{{tstaff|safe }}, {{tsu|safe }}, {{tp|safe }}, {{tg|safe }}],
+                backgroundColor: [
+                    'rgb(255, 99, 132)',
+                    '#28a745',
+                    'rgb(255, 206, 86)',
+                    'rgb(75, 192, 192)',
+                    
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>
+{% endblock morejs %}

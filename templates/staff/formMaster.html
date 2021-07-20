@@ -1,0 +1,61 @@
+{% extends 'home/homebase.html' %} 
+{% block content %}
+{% include 'staff/fmmenubar.html' %}
+{% include 'staff/fmmodals.html' %}
+
+
+<section class="section-padding">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 card p-3 ">
+                {% if formMasters %}
+                <h1 class="card-header text-center">Form Masters or Mistress</h1>
+                <div class="table-responsive">
+                    <table id="fMtable" class="table table-bordered table-hover" data-page-length='100'>
+                      <thead class="thead-light">
+                        <tr>
+                          <th>Staff</th>
+                          <th>Class</th>
+                          <th>Action</th>
+                          
+                        </tr>
+                      </thead>
+                      <tbody>
+                
+                        {% for formMaster in formMasters %}
+                          <tr>
+                            
+                            <td>{{ formMaster.staff }} </td>
+                            <td>{{ formMaster.clas_s }}</td>
+                    
+                            <td>{% include 'staff/formMasterdeleteModal.html' %}
+                            </td>
+                           
+                          </tr>
+                        {% endfor %}
+                
+                      </tbody>
+                    </table>
+                </div>
+               
+                {% else %}
+                <p class="text-center ">No Staff Available</p> <br>
+                <button type="button" data-toggle="modal" data-target="#add-fm" class="btn btn-primary">
+                    <i class="fa fa-plus"></i> Add Staff 
+                </button> 
+                {% endif %}
+            </div>  
+        </div>
+    </div>
+</section>
+
+
+{% endblock content %}
+
+{% block morejs %}
+    <script>
+    $('#fMtable').DataTable({
+    });
+    </script>
+
+{% endblock %}  

@@ -1,0 +1,55 @@
+{% extends 'home/homebase.html' %}
+{% load widget_tweaks %}
+
+{% block content %}
+<section class="section-padding">
+  <div class="container-fluid">  
+    <form method="POST" action="{% url 'results:delete_reports' %}">
+    {% csrf_token %}
+    {{ formset.management_form}}
+    <div class="card">
+      <div class="card-header h2 text-center text-primary">
+          Report Cards
+      </div>
+      <div class="card-body table-responsive">
+        <table class="table table-sm  table-hover">
+          <thead>
+            <tr>
+              <th>Student</th>
+              <th>Delete <input type="checkbox" id="selectall"></th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for form in formset %}
+            {{ form.id}}
+              <tr>
+                <td>{{form.instance.student }}</td>
+                <td name='todelete'>{{form.DELETE | add_class:"todelete" }}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <input type="submit" class="btn btn-primary" value="Save">
+    </form>
+  </div>
+</section>
+{% endblock content %}
+
+{% block morejs %}
+<script>
+
+$("#selectall").change(function () {
+  if (this.checked) {
+    $('input[class="todelete"]').prop('checked', true);
+  }
+  else {
+    $('input[class="todelete"]').prop('checked', false);
+  }
+});
+
+
+
+</script>
+{% endblock morejs %}

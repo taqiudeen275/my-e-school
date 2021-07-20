@@ -1,0 +1,19 @@
+<button type="button" data-toggle="modal" data-target="#student-search" class="btn text-dark">
+   Search A Student  
+</button>
+<div id="student-search" tabindex="-1" role="dialog" aria-labelledby="student-search" aria-hidden="true"
+        class="modal fade text-left" >
+        <div role="document" class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <p>Enter the particulars of the student you want.</p>
+                    <form  enctype="multipart/form-data">
+                            {{sform.as_p}}
+                        <div class="form-group">
+                            <input type="submit" value="Save changes" class="btn btn-secondary">
+                        </div>
+                    </form>
+                </div>
+         </div>
+     </div>
+</div>

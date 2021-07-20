@@ -1,0 +1,26 @@
+{% load static %}
+<script src="{% static 'assets/js/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'assets/js/popper.js/umd/popper.min.js' %}"> </script>
+<script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'assets/js/grasp_mobile_progress_circle-1.0.0.min.js' %}"></script>
+<script src="{% static 'assets/js/jquery.cookie/jquery.cookie.js' %}"> </script>
+<script src="{% static 'assets/js/chart.js/Chart.min.js' %}"></script>
+<script src="{% static 'assets/js/jquery-validation/jquery.validate.min.js' %}"></script>
+<script src="{% static 'assets/js/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+<script src="{% static 'assets/js/aos.js' %}"></script>
+<script src="{% static 'assets/js/front.js' %}"></script>
+<script src="{% static 'assets/toastr.min.js' %}"></script>
+<script src="{% static 'assets/datatables.min.js' %}"></script>
+<script src="{% static 'assets/html2pdf.bundle.min.js' %}"></script>
+<script>
+
+(function ($) {
+    $('.clickable-row').css('cursor', 'pointer');
+    $(".clickable-row").click(function () {
+    window.location = $(this).data("href");
+    });
+})(jQuery);
+
+AOS.init();
+</script>
+

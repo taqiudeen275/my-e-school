@@ -1,0 +1,63 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="page login-page">
+    <div class="container">
+      <div class="form-outer text-center row">
+        <div class="form-inner col-12">
+          <div class="logo text-uppercase"><strong class="text-primary">My E-School</strong> <span>Staff Registration </span></div>
+          <p>This is a staff registration form , if you are a staff fill in your particulars else if you are not a staff click here to change your user typ {% include 'staffUser/changeModal.html' %}.</p>
+          <div class="text-primary alert-primary">
+            {{ form.non_field_errors }}
+        </div>
+          <form action="{% url 'staffUser:register' %}" method="POST" class="text-left form-validate">{% csrf_token %}
+            <div class="form-group-material">
+                {{form.first_name}}
+            </div>
+            <div class="form-group-material">
+                {{form.last_name}}
+              </div>
+              <div class="form-group-material">
+                <label for="user-type" class="label-material">Photo </label>
+                {{form.photo}}
+            </div>
+            <div class="form-group-material">
+                {{form.staff_id}}
+            </div>
+            <div class="form-group-material">
+              <label for="user-type" class="label-material">Gender </label>
+                {{form.gender}}
+            </div>
+            <div class="form-group-material">
+                {{form.phone_number}}
+            </div>
+            <div class="form-group-material">
+                {{form.email}}
+            </div>
+            <div class="form-group-material">
+              <label for="user-type" class="label-material">Date Joined </label>
+              {{form.date_joined}}
+          </div>
+            <div class="form-group-material form-inline">
+                <label for="user-type" class="label-material">Classes </label>
+                {{form.class_taught}}
+            </div>
+            <div class="form-group-material form-inline">
+                <label for="user-type" class="label-material">Subject </label>
+                {{form.subject_taught}}
+            </div>
+            <div class="form-group text-center">
+              <input id="register" type="submit" value="Register" class="btn btn-primary">
+            </div>
+        </div>
+      </div>
+      <div class="copyrights text-center row mt-2">
+        <a class="text-primary btn-link" href="{% url 'account:logout' %}">Logout</a>
+        <p>Developed by <a href="#" class="external">ATS tech</a></p>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+  

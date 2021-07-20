@@ -1,0 +1,2872 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+
+    <title>Basics</title>
+    <link rel="stylesheet" href="/static/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/static/assets/css/fontastic.css">
+    <link rel="stylesheet" href="/static/assets/css/aos.css">
+    <link rel="stylesheet" href="/static/assets/css/grasp_mobile_progress_circle-1.0.0.min.css">
+    <link rel="stylesheet" href="/static/assets/css/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" href="/static/assets/datatables.min.css">
+    <link rel="stylesheet" href="/static/assets/css/style.pink.css" id="theme-stylesheet">
+    <link rel="stylesheet" href="/static/assets/css/custom.css">
+    <link rel="stylesheet" href="/static/assets/toastr.min.css">
+    <link rel="stylesheet" href="/static/assets/icons-reference/styles.css">
+    <!-- <link rel="shortcut icon" href="/static/home/img/1.jpeg"> -->
+
+    <style type="text/css">
+        /* Chart.js */
+        @-webkit-keyframes chartjs-render-animation {
+            from {
+                opacity: 0.99
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        @keyframes chartjs-render-animation {
+            from {
+                opacity: 0.99
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        .chartjs-render-monitor {
+            -webkit-animation: chartjs-render-animation 0.001s;
+            animation: chartjs-render-animation 0.001s;
+        }
+    </style>
+</head>
+
+<body data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0">
+    <!-- Side Navbar -->
+
+    <nav class="side-navbar">
+        <div class="side-navbar-wrapper">
+            <!-- Sidebar Header    -->
+            <div class="sidenav-header d-flex align-items-center justify-content-center">
+                <!-- User Info-->
+                <div class="sidenav-header-inner text-center">
+
+                    <img src="/media/profile/default.png" alt="profile picture" class="img-fluid rounded-circle">
+                    <h2 class="h5">ats</h2><span>staff</span>
+                </div>
+                <!-- Small Brand information, appears on minimized sidebar-->
+                <div class="sidenav-header-logo">
+                    <a href="/home/" class="brand-small text-center"> <strong>NS</strong><strong
+                            class="text-primary">B</strong></a>
+                </div>
+            </div>
+            <!-- Sidebar Navigation Menus-->
+            <div class="main-menu">
+
+                <ul id="side-main-menu" class="side-menu list-unstyled">
+                    <li>
+                        <a href="/home/"> <i class="icon-home"></i>Home</a>
+                    </li>
+                    <li>
+                        <a href="/blog/"> <i class="fa fa-feed"></i>Blog</a>
+                    </li>
+
+                    <li>
+                        <a href="/others/notice-board/"> <i class="icon-padnote"></i>Notice Board</a>
+                    </li>
+
+                    <li>
+                        <a href="/others/about-school/"> <i class="icon-page"></i>About School</a>
+                    </li>
+                    <li>
+                        <a href="/others/about-staff"> <i class="icon-user"></i>About Staff</a>
+                    </li>
+
+
+                    <li><a href="/profile/"><i class="icon-user"></i>Profile</a></li>
+
+
+                    <li>
+                        <a href="#rsdrop" aria-expanded="false" data-toggle="collapse"> <i
+                                class="fa fa-book"></i>Results</a>
+                        <ul id="rsdrop" class="collapse list-unstyled ">
+
+                            <li> <a href="/staff-user/create/"><i class="fa fa-user-circle-o"></i>Add Results</a>
+                            </li>
+
+                            <li> <a href="/staff-user/view/all"><i class="fa fa-user"></i>All Results</a>
+                            </li>
+                        </ul>
+                    </li>
+
+
+
+                    <h5 class="sidenav-heading">For Admin</h5>
+                    <li> <a href="/admin/"><i class="fa fa-dashboard"></i>MS Admin</a>
+                    </li>
+
+                    <li>
+                        <a href="/others/basics"> <i class="fa fa-info"></i>About</a>
+                    </li>
+                    <li><a href="/basics"> <i class="fa fa-book"></i>Basics</a></li>
+                    <li>
+                        <a href="#blog" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-feed"></i>Blog</a>
+                        <ul id="blog" class="collapse list-unstyled ">
+
+                            <li> <a href="/blog/create/"><i class="fa fa-plus"></i>Post Blog</a>
+                            </li>
+
+                            <li> <a href="/blog/create-blog-category/"><i class="fa fa-plus"></i>Create Blog
+                                    Categories</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#sfdrop" aria-expanded="false" data-toggle="collapse"> <i
+                                class="fa fa-user-circle"></i>Staff</a>
+                        <ul id="sfdrop" class="collapse list-unstyled ">
+
+                            <li> <a href="/staff/form-master/"><i class="fa fa-user-circle-o"></i>Form Matser</a>
+                            </li>
+
+                            <li> <a href="/staff/"><i class="fa fa-user"></i>Staff</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#studrop" aria-expanded="false" data-toggle="collapse"> <i
+                                class="fa fa-user-circle"></i>Student</a>
+                        <ul id="studrop" class="collapse list-unstyled ">
+
+                            <li> <a href="/students/"><i class="fa fa-list"></i>Students</a>
+                            </li>
+
+                            <li> <a href="/student-user/all-student-id"><i class="fa fa-list"></i>All ID</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="/results/"> <i class="fa fa-book"></i>Results</a>
+                    </li>
+
+                    <li>
+                        <a href="/logout/"> <i class="icon-interface-windows"></i>Logout </a>
+                    </li>
+
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+    <div class="page">
+        <header class="header">
+            <nav class="navbar">
+                <div class="container-fluid">
+                    <div class="navbar-holder d-flex align-items-center justify-content-between">
+                        <div class="navbar-header"><a id="toggle-btn" href="#" class="menu-btn"><i class="icon-bars">
+                                </i></a>
+                            <a href="/home/" class="navbar-brand">
+                                <div class="brand-text d-none d-md-inline-block"><span></span><strong
+                                        class="text-primary">Nobisco</strong></div>
+                            </a>
+                        </div>
+                        <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
+
+
+                            <li><a href="/profile/" class="nav-link"><i class="fa fa-user-circle"></i></a></li>
+
+
+                            <!-- Log out-->
+                            <li class="nav-item">
+                                <a href="/logout/" class="nav-link logout"> <span
+                                        class="d-none d-sm-inline-block">Logout</span><i class="fa fa-sign-out"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <nav class="navbar bg-transparent card">
+            <div class="container">
+                <div class="navbar-holder table-responsive">
+
+                    <ul class="nav-menu list-unstyled d-flex flex-md-row">
+                        <li class="nav-item">
+                            <button type="button" data-toggle="modal" data-target="#add-program" class="btn text-dark">
+                                <i class="fa fa-plus"></i> Program
+                            </button>
+                        </li>
+                        <li class="nav-item">
+                            <button type="button" data-toggle="modal" data-target="#add-level" class="btn text-dark">
+                                <i class="fa fa-plus"></i> Level
+                            </button>
+                        </li>
+                        <li class="nav-item">
+                            <button type="button" data-toggle="modal" data-target="#add-class" class="btn text-dark">
+                                <i class="fa fa-plus"></i> Class
+                            </button>
+                        </li>
+                        <li class="nav-item ">
+                            <button type="button" data-toggle="modal" data-target="#add-semester" class="btn text-dark">
+                                <i class="fa fa-plus"></i> Semester
+                            </button>
+                        </li>
+                        <li class="nav-item">
+                            <button type="button" data-toggle="modal" data-target="#add-batch" class="btn text-dark">
+                                <i class="fa fa-plus"></i> Batch
+                            </button>
+                        </li>
+                        <li class="nav-item">
+                            <button type="button" data-toggle="modal" data-target="#add-ay" class="btn text-dark">
+                                <i class="fa fa-plus"></i> Academic Year
+                            </button>
+                        </li>
+                        <li class="nav-item">
+                            <button type="button" data-toggle="modal" data-target="#add-subjects" class="btn text-dark">
+                                <i class="fa fa-plus"></i> Subjects
+                            </button>
+                        </li>
+                        <li class="nav-item">
+                            <button type="button" data-toggle="modal" data-target="#add-house" class="btn text-dark">
+                                <i class="fa fa-plus"></i> House
+                            </button>
+                        </li>
+                        <li class="nav-item">
+                            <button type="button" data-toggle="modal" data-target="#add-staffid" class="btn text-dark">
+                                <i class="fa fa-plus"></i> Staff Id
+                            </button>
+                        </li>
+                        <li class="nav-item">
+                            <button type="button" data-toggle="modal" data-target="#create-result"
+                                class="btn text-dark">
+                                <i class="fa fa-plus"></i> Results
+                            </button>
+                        </li>
+                        <li class="nav-item ">
+                            <button type="button" data-toggle="modal" data-target="#change-class" class="btn text-dark">
+                                <i class="fa fa-plus"></i> Change Classes
+                            </button>
+                        </li>
+                        <li class="nav-item">
+                            <button type="button" data-toggle="modal" data-target="#add-info" class="btn text-dark">
+                                <i class="fa fa-info"></i>
+                            </button>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div id="add-program" tabindex="-1" role="dialog" aria-labelledby="add-program" aria-hidden="true"
+            class="modal fade text-left" data-backdrop="static">
+            <div role="document" class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 id="exampleModalLabel" class="modal-title">Add Program or Course</h5>
+                        <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span
+                                aria-hidden="true">×</span></button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="/basics/create/sp" method="POST" enctype="multipart/form-data"
+                            id="StudentRegistrationForm">
+                            <input type="hidden" name="csrfmiddlewaretoken"
+                                value="GZnIMUmjZXY6glutICELlZwh6FFH3yebcPyXWWqbxKxcIaaLAPR4LuQfZDV6pWzU">
+                            <p> <input type="text" name="name" class="input-material" placeholder="Programme Name"
+                                    required="" id="id_name"></p>
+                            <input type="submit" class="btn btn-dark" value="Save">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="add-level" tabindex="-1" role="dialog" aria-labelledby="add-level" aria-hidden="true"
+            class="modal fade text-left" data-backdrop="static">
+            <div role="document" class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 id="exampleModalLabel" class="modal-title">Add Level or Form</h5>
+                        <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span
+                                aria-hidden="true">×</span></button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="/basics/create/sl" method="POST" enctype="multipart/form-data"
+                            id="StudentRegistrationForm">
+                            <input type="hidden" name="csrfmiddlewaretoken"
+                                value="GZnIMUmjZXY6glutICELlZwh6FFH3yebcPyXWWqbxKxcIaaLAPR4LuQfZDV6pWzU">
+                            <p><label for="id_name">Name:</label> <input type="text" name="name" class="input-material"
+                                    placeholder="Enter Form or Level" required="" id="id_name"></p>
+                            <input type="submit" class="btn btn-dark" value="Save">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="add-class" tabindex="-1" role="dialog" aria-labelledby="add-class" aria-hidden="true"
+            class="modal fade text-left" data-backdrop="static">
+            <div role="document" class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 id="exampleModalLabel" class="modal-title">Add Class</h5>
+                        <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span
+                                aria-hidden="true">×</span></button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="/basics/create/sc" method="POST" enctype="multipart/form-data" id="classForm">
+                            <input type="hidden" name="csrfmiddlewaretoken"
+                                value="GZnIMUmjZXY6glutICELlZwh6FFH3yebcPyXWWqbxKxcIaaLAPR4LuQfZDV6pWzU">
+                            <p><label for="id_name">Name:</label> <select name="name" class="input-material"
+                                    id="id_name">
+                                    <option value="" selected="">---------</option>
+
+                                    <option value="8">General Arts</option>
+
+                                    <option value="9">Business</option>
+
+                                    <option value="10">Home Economics</option>
+
+                                    <option value="11">General Science</option>
+
+                                </select></p>
+                            <p><label for="id_section">Section:</label> <select name="section" class="input-material"
+                                    id="id_section">
+                                    <option value="" selected="">---------</option>
+
+                                    <option value="A">A</option>
+
+                                    <option value="B">B</option>
+
+                                    <option value="C">C</option>
+
+                                    <option value="D">D</option>
+
+                                    <option value="E">E</option>
+
+                                    <option value="F">F</option>
+
+                                    <option value="G">G</option>
+
+                                    <option value="H">H</option>
+
+                                    <option value="I">I</option>
+
+                                    <option value="J">J</option>
+
+                                    <option value="K">K</option>
+
+                                    <option value="L">L</option>
+
+                                    <option value="M">M</option>
+
+                                    <option value="N">N</option>
+
+                                    <option value="O">O</option>
+
+                                    <option value="P">P</option>
+
+                                    <option value="Q">Q</option>
+
+                                    <option value="R">R</option>
+
+                                    <option value="S">S</option>
+
+                                    <option value="T">T</option>
+
+                                    <option value="U">U</option>
+
+                                    <option value="V">V</option>
+
+                                    <option value="W">W</option>
+
+                                    <option value="X">X</option>
+
+                                    <option value="Y">Y</option>
+
+                                    <option value="Z">Z</option>
+
+                                </select></p>
+                            <p><label for="id_batch">Batch:</label> <select name="batch" class="input-material"
+                                    id="id_batch">
+                                    <option value="" selected="">---------</option>
+
+                                    <option value="7">2018</option>
+
+                                    <option value="6">2019</option>
+
+                                    <option value="5">2020</option>
+
+                                </select></p>
+                            <p><label for="id_track">Track:</label> <select name="track" class="input-material"
+                                    id="id_track">
+                                    <option value="" selected="">---------</option>
+
+                                    <option value="Track Gold">gold</option>
+
+                                    <option value="Track Green">green</option>
+
+                                </select></p>
+                            <input type="submit" class="btn btn-dark" value="Save">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="create-result" tabindex="-1" role="dialog" aria-labelledby="create-result" aria-hidden="true"
+            class="modal fade text-left" data-backdrop="static">
+            <div role="document" class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 id="exampleModalLabel" class="modal-title">Create Result</h5>
+                        <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span
+                                aria-hidden="true">×</span></button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="/basics/create/sr" method="POST" enctype="multipart/form-data" id="classForm">
+                            <input type="hidden" name="csrfmiddlewaretoken"
+                                value="GZnIMUmjZXY6glutICELlZwh6FFH3yebcPyXWWqbxKxcIaaLAPR4LuQfZDV6pWzU">
+                            <p><label for="id_semester">Semester:</label> <select name="semester" id="id_semester">
+                                    <option value="" selected="">---------</option>
+
+                                    <option value="4">2nd Semester</option>
+
+                                    <option value="3">1st Semester</option>
+
+                                </select></p>
+                            <p><label for="id_academic_year">Academic year:</label> <select name="academic_year"
+                                    id="id_academic_year">
+                                    <option value="" selected="">---------</option>
+
+                                    <option value="5">2021/2022</option>
+
+                                    <option value="4">2020/2021</option>
+
+                                </select></p>
+                            <input type="submit" class="btn btn-dark" value="Create">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="add-batch" tabindex="-1" role="dialog" aria-labelledby="add-batch" aria-hidden="true"
+            class="modal fade text-left" data-backdrop="static">
+            <div role="document" class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 id="exampleModalLabel" class="modal-title">Add Batch</h5>
+                        <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span
+                                aria-hidden="true">×</span></button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="/basics/create/sb" method="POST" enctype="multipart/form-data"
+                            id="StudentRegistrationForm">
+                            <input type="hidden" name="csrfmiddlewaretoken"
+                                value="GZnIMUmjZXY6glutICELlZwh6FFH3yebcPyXWWqbxKxcIaaLAPR4LuQfZDV6pWzU">
+                            <p><label for="id_name">Name:</label> <input type="text" name="name" class="input-material"
+                                    placeholder="Enter Batch Name" maxlength="100" required="" id="id_name"></p>
+                            <p><label for="id_completed">Completed:</label> <input type="checkbox" name="completed"
+                                    id="id_completed"></p>
+                            <input type="submit" class="btn btn-dark" value="Save">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="add-semester" tabindex="-1" role="dialog" aria-labelledby="add-semester" aria-hidden="true"
+            class="modal fade text-left" data-backdrop="static">
+            <div role="document" class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 id="exampleModalLabel" class="modal-title">Add Semester or Term</h5>
+                        <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span
+                                aria-hidden="true">×</span></button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="/basics/create/ss" method="POST" enctype="multipart/form-data"
+                            id="StudentRegistrationForm">
+                            <input type="hidden" name="csrfmiddlewaretoken"
+                                value="GZnIMUmjZXY6glutICELlZwh6FFH3yebcPyXWWqbxKxcIaaLAPR4LuQfZDV6pWzU">
+                            <p><label for="id_name">Name:</label> <input type="text" name="name" class="input-material"
+                                    placeholder="Enter Semester" maxlength="50" required="" id="id_name"></p>
+                            <input type="submit" class="btn btn-dark" value="Save">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="add-ay" tabindex="-1" role="dialog" aria-labelledby="add-ay" aria-hidden="true"
+            class="modal fade text-left" data-backdrop="static">
+            <div role="document" class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 id="exampleModalLabel" class="modal-title">Add Academic Year</h5>
+                        <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span
+                                aria-hidden="true">×</span></button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="/basics/create/sa" method="POST" enctype="multipart/form-data"
+                            id="StudentRegistrationForm">
+                            <input type="hidden" name="csrfmiddlewaretoken"
+                                value="GZnIMUmjZXY6glutICELlZwh6FFH3yebcPyXWWqbxKxcIaaLAPR4LuQfZDV6pWzU">
+                            <p><label for="id_name">Name:</label> <input type="text" name="name" class="input-material"
+                                    placeholder="Enter Academic Year" maxlength="50" required="" id="id_name"></p>
+                            <input type="submit" class="btn btn-dark" value="Save">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="add-subjects" tabindex="-1" role="dialog" aria-labelledby="add-subjects" aria-hidden="true"
+            class="modal fade text-left" data-backdrop="static">
+            <div role="document" class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 id="exampleModalLabel" class="modal-title">Add Subject</h5>
+                        <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span
+                                aria-hidden="true">×</span></button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="/basics/create/ssj" method="POST" enctype="multipart/form-data"
+                            id="StudentRegistrationForm">
+                            <input type="hidden" name="csrfmiddlewaretoken"
+                                value="GZnIMUmjZXY6glutICELlZwh6FFH3yebcPyXWWqbxKxcIaaLAPR4LuQfZDV6pWzU">
+                            <p><label for="id_name">Name:</label> <input type="text" name="name" class="input-material"
+                                    placeholder="Enter Form or Level" maxlength="200" required="" id="id_name"></p>
+                            <input type="submit" class="btn btn-dark" value="Save">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="add-house" tabindex="-1" role="dialog" aria-labelledby="add-house" aria-hidden="true"
+            class="modal fade text-left" data-backdrop="static">
+            <div role="document" class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 id="exampleModalLabel" class="modal-title">Add Subject</h5>
+                        <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span
+                                aria-hidden="true">×</span></button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="/basics/create/sh" method="POST" enctype="multipart/form-data"
+                            id="StudentRegistrationForm">
+                            <input type="hidden" name="csrfmiddlewaretoken"
+                                value="GZnIMUmjZXY6glutICELlZwh6FFH3yebcPyXWWqbxKxcIaaLAPR4LuQfZDV6pWzU">
+                            <p><label for="id_name">Name:</label> <input type="text" name="name" class="input-material"
+                                    maxlength="300" required="" id="id_name"></p>
+                            <input type="submit" class="btn btn-dark" value="Save">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="add-info" tabindex="-1" role="dialog" aria-labelledby="add-info" aria-hidden="true"
+            class="modal fade text-left">
+            <div role="document" class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 id="exampleModalLabel" class="modal-title">Help</h5>
+                        <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span
+                                aria-hidden="true">×</span></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Click on an item to delete it</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="add-staffid" tabindex="-1" role="dialog" aria-labelledby="add-house" aria-hidden="true"
+            class="modal fade text-left" data-backdrop="static">
+            <div role="document" class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 id="exampleModalLabel" class="modal-title">Add Staff Identication code</h5>
+                        <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span
+                                aria-hidden="true">×</span></button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="/basics/create/ssid" method="POST" enctype="multipart/form-data">
+                            <input type="hidden" name="csrfmiddlewaretoken"
+                                value="GZnIMUmjZXY6glutICELlZwh6FFH3yebcPyXWWqbxKxcIaaLAPR4LuQfZDV6pWzU">
+                            <p><label for="id_name">Name:</label> <input type="text" name="name" class="input-material"
+                                    placeholder="Staff Id Code" maxlength="10" required="" id="id_name"></p>
+                            <input type="submit" class="btn btn-dark" value="Save">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="change-class" tabindex="-1" role="dialog" aria-labelledby="add-house" aria-hidden="true"
+            class="modal fade text-left" data-backdrop="static">
+            <div role="document" class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 id="exampleModalLabel" class="modal-title">Change Classes</h5>
+                        <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span
+                                aria-hidden="true">×</span></button>
+                    </div>
+                    <div class="modal-body">
+                        Are you sure you want to change all stuent class?
+                        <a class="btn btn-primary" href="/basics/change-class">Yes</a>
+                        <a data-dismiss="modal" aria-label="Close" class="close btn btn-ddanger">No</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <section class="section-padding">
+            <div class="container-fluid">
+                <div class="row aos-init aos-animate" data-aos="flip-left" data-aos-delay="100">
+                    <div class="col-md-4 alert card p-3 alert-dismissible aos-init aos-animate" role="alert"
+                        data-aos="flip-left" data-aos-delay="200">
+
+                        <h2 class="text-center  mb-3">Programs</h2>
+                        <ul>
+
+                            <a class="mb-2 text-white btn btn-primary" data-toggle="modal" data-target="#program8">
+                                General Arts</a>
+                            <div class="modal fade text-dark" id="program8" tabindex="-1" role="dialog"
+                                aria-labelledby="program8" aria-hidden="true">
+                                <div class="modal-dialog modal-md" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="staticModalLabel">Delete General Arts </h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">×</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>
+                                                Are you sure you want to delete General Arts
+                                            </p>
+
+                                            <form method="post" action="/basics/delete/8/dp">
+                                                <input type="hidden" name="csrfmiddlewaretoken"
+                                                    value="GZnIMUmjZXY6glutICELlZwh6FFH3yebcPyXWWqbxKxcIaaLAPR4LuQfZDV6pWzU">
+
+                                                <div class="modal-footer">
+
+                                                    <button type="submit" class="btn btn-danger">Yes</button>
+
+                                                    <button type="button" class="btn btn-secondary"
+                                                        data-dismiss="modal">No</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <a class="mb-2 text-white btn btn-primary" data-toggle="modal" data-target="#program9">
+                                Business</a>
+                            <div class="modal fade text-dark" id="program9" tabindex="-1" role="dialog"
+                                aria-labelledby="program9" aria-hidden="true">
+                                <div class="modal-dialog modal-md" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="staticModalLabel">Delete Business </h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">×</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>
+                                                Are you sure you want to delete Business
+                                            </p>
+
+                                            <form method="post" action="/basics/delete/9/dp">
+                                                <input type="hidden" name="csrfmiddlewaretoken"
+                                                    value="GZnIMUmjZXY6glutICELlZwh6FFH3yebcPyXWWqbxKxcIaaLAPR4LuQfZDV6pWzU">
+
+                                                <div class="modal-footer">
+
+                                                    <button type="submit" class="btn btn-danger">Yes</button>
+
+                                                    <button type="button" class="btn btn-secondary"
+                                                        data-dismiss="modal">No</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <a class="mb-2 text-white btn btn-primary" data-toggle="modal" data-target="#program10">
+                                Home Economics</a>
+                            <div class="modal fade text-dark" id="program10" tabindex="-1" role="dialog"
+                                aria-labelledby="program10" aria-hidden="true">
+                                <div class="modal-dialog modal-md" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="staticModalLabel">Delete Home Economics </h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">×</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>
+                                                Are you sure you want to delete Home Economics
+                                            </p>
+
+                                            <form method="post" action="/basics/delete/10/dp">
+                                                <input type="hidden" name="csrfmiddlewaretoken"
+                                                    value="GZnIMUmjZXY6glutICELlZwh6FFH3yebcPyXWWqbxKxcIaaLAPR4LuQfZDV6pWzU">
+
+                                                <div class="modal-footer">
+
+                                                    <button type="submit" class="btn btn-danger">Yes</button>
+
+                                                    <button type="button" class="btn btn-secondary"
+                                                        data-dismiss="modal">No</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <a class="mb-2 text-white btn btn-primary" data-toggle="modal" data-target="#program11">
+                                General Science</a>
+                            <div class="modal fade text-dark" id="program11" tabindex="-1" role="dialog"
+                                aria-labelledby="program11" aria-hidden="true">
+                                <div class="modal-dialog modal-md" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="staticModalLabel">Delete General Science </h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">×</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>
+                                                Are you sure you want to delete General Science
+                                            </p>
+
+                                            <form method="post" action="/basics/delete/11/dp">
+                                                <input type="hidden" name="csrfmiddlewaretoken"
+                                                    value="GZnIMUmjZXY6glutICELlZwh6FFH3yebcPyXWWqbxKxcIaaLAPR4LuQfZDV6pWzU">
+
+                                                <div class="modal-footer">
+
+                                                    <button type="submit" class="btn btn-danger">Yes</button>
+
+                                                    <button type="button" class="btn btn-secondary"
+                                                        data-dismiss="modal">No</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </ul>
+                        <button type="button" class="close btn-primary" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+
+                    </div>
+                    <div class="col-md-4 alert card p-3 alert-dismissible aos-init aos-animate" role="alert"
+                        data-aos="flip-left" data-aos-delay="300">
+
+                        <h2 class="text-center mb-2">Levels</h2>
+                        <ul>
+
+                            <a class="mb-2 text-white btn btn-primary" data-toggle="modal" data-target="#level4">
+                                1</a>
+                            <div class="modal fade text-dark" id="level4" tabindex="-1" role="dialog"
+                                aria-labelledby="level4" aria-hidden="true">
+                                <div class="modal-dialog modal-md" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="staticModalLabel">Delete 1 </h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">×</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>
+                                                Are you sure you want to delete 1
+                                            </p>
+                                        </div>
+                                        <form method="post" action="/basics/delete/4/dl">
+                                            <input type="hidden" name="csrfmiddlewaretoken"
+                                                value="GZnIMUmjZXY6glutICELlZwh6FFH3yebcPyXWWqbxKxcIaaLAPR4LuQfZDV6pWzU">
+
+                                            <div class="modal-footer">
+
+                                                <button type="submit" class="btn btn-danger">Yes</button>
+
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-dismiss="modal">No</button>
+
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <a class="mb-2 text-white btn btn-primary" data-toggle="modal" data-target="#level5">
+                                2</a>
+                            <div class="modal fade text-dark" id="level5" tabindex="-1" role="dialog"
+                                aria-labelledby="level5" aria-hidden="true">
+                                <div class="modal-dialog modal-md" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="staticModalLabel">Delete 2 </h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">×</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>
+                                                Are you sure you want to delete 2
+                                            </p>
+                                        </div>
+                                        <form method="post" action="/basics/delete/5/dl">
+                                            <input type="hidden" name="csrfmiddlewaretoken"
+                                                value="GZnIMUmjZXY6glutICELlZwh6FFH3yebcPyXWWqbxKxcIaaLAPR4LuQfZDV6pWzU">
+
+                                            <div class="modal-footer">
+
+                                                <button type="submit" class="btn btn-danger">Yes</button>
+
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-dismiss="modal">No</button>
+
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <a class="mb-2 text-white btn btn-primary" data-toggle="modal" data-target="#level6">
+                                3</a>
+                            <div class="modal fade text-dark" id="level6" tabindex="-1" role="dialog"
+                                aria-labelledby="level6" aria-hidden="true">
+                                <div class="modal-dialog modal-md" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="staticModalLabel">Delete 3 </h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">×</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>
+                                                Are you sure you want to delete 3
+                                            </p>
+                                        </div>
+                                        <form method="post" action="/basics/delete/6/dl">
+                                            <input type="hidden" name="csrfmiddlewaretoken"
+                                                value="GZnIMUmjZXY6glutICELlZwh6FFH3yebcPyXWWqbxKxcIaaLAPR4LuQfZDV6pWzU">
+
+                                            <div class="modal-footer">
+
+                                                <button type="submit" class="btn btn-danger">Yes</button>
+
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-dismiss="modal">No</button>
+
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </ul>
+                        <button type="button" class="close btn-primary" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+
+                    </div>
+                    <div class="col-md-4 alert card p-3 alert-dismissible aos-init aos-animate" role="alert"
+                        data-aos="flip-left" data-aos-delay="400">
+
+                        <h2 class="text-center mb-3">Semesters</h2>
+                        <ul>
+
+                            <a class="mb-2 text-white btn btn-primary" data-toggle="modal" data-target="#semester4">
+                                2nd Semester</a>
+                            <div class="modal fade text-dark" id="semester4" tabindex="-1" role="dialog"
+                                aria-labelledby="semester4" aria-hidden="true">
+                                <div class="modal-dialog modal-md" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="staticModalLabel">Delete 2nd Semester </h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">×</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>
+                                                Are you sure you want to delete 2nd Semester
+                                            </p>
+                                        </div>
+                                        <form method="post" action="/basics/delete/4/ds">
+                                            <input type="hidden" name="csrfmiddlewaretoken"
+                                                value="GZnIMUmjZXY6glutICELlZwh6FFH3yebcPyXWWqbxKxcIaaLAPR4LuQfZDV6pWzU">
+
+                                            <div class="modal-footer">
+
+                                                <button type="submit" class="btn btn-danger">Yes</button>
+
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-dismiss="modal">No</button>
+
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <a class="mb-2 text-white btn btn-primary" data-toggle="modal" data-target="#semester3">
+                                1st Semester</a>
+                            <div class="modal fade text-dark" id="semester3" tabindex="-1" role="dialog"
+                                aria-labelledby="semester3" aria-hidden="true">
+                                <div class="modal-dialog modal-md" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="staticModalLabel">Delete 1st Semester </h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">×</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>
+                                                Are you sure you want to delete 1st Semester
+                                            </p>
+                                        </div>
+                                        <form method="post" action="/basics/delete/3/ds">
+                                            <input type="hidden" name="csrfmiddlewaretoken"
+                                                value="GZnIMUmjZXY6glutICELlZwh6FFH3yebcPyXWWqbxKxcIaaLAPR4LuQfZDV6pWzU">
+
+                                            <div class="modal-footer">
+
+                                                <button type="submit" class="btn btn-danger">Yes</button>
+
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-dismiss="modal">No</button>
+
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </ul>
+                        <button type="button" class="close btn-primary" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+
+                    </div>
+                </div>
+                <div class="row aos-init aos-animate" data-aos="flip-right" data-aos-delay="200">
+                    <div class="col-md-6 alert card p-3 alert-dismissible aos-init aos-animate" role="alert"
+                        data-aos="flip-right" data-aos-delay="300">
+
+                        <h2 class="text-center mb-3">Academic Year</h2>
+                        <ul>
+
+                            <a class="mb-2 text-white btn btn-primary" data-toggle="modal" data-target="#ay5">
+                                2021/2022</a>
+                            <div class="modal fade text-dark" id="ay5" tabindex="-1" role="dialog" aria-labelledby="ay5"
+                                aria-hidden="true">
+                                <div class="modal-dialog modal-md" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="staticModalLabel">Delete 2021/2022 </h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">×</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>
+                                                Are you sure you want to delete 2021/2022
+                                            </p>
+
+                                            <form method="post" action="/basics/delete/5/da">
+                                                <input type="hidden" name="csrfmiddlewaretoken"
+                                                    value="GZnIMUmjZXY6glutICELlZwh6FFH3yebcPyXWWqbxKxcIaaLAPR4LuQfZDV6pWzU">
+
+                                                <div class="modal-footer">
+
+                                                    <button type="submit" class="btn btn-danger">Yes</button>
+
+                                                    <button type="button" class="btn btn-secondary"
+                                                        data-dismiss="modal">No</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <a class="mb-2 text-white btn btn-primary" data-toggle="modal" data-target="#ay4">
+                                2020/2021</a>
+                            <div class="modal fade text-dark" id="ay4" tabindex="-1" role="dialog" aria-labelledby="ay4"
+                                aria-hidden="true">
+                                <div class="modal-dialog modal-md" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="staticModalLabel">Delete 2020/2021 </h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">×</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>
+                                                Are you sure you want to delete 2020/2021
+                                            </p>
+
+                                            <form method="post" action="/basics/delete/4/da">
+                                                <input type="hidden" name="csrfmiddlewaretoken"
+                                                    value="GZnIMUmjZXY6glutICELlZwh6FFH3yebcPyXWWqbxKxcIaaLAPR4LuQfZDV6pWzU">
+
+                                                <div class="modal-footer">
+
+                                                    <button type="submit" class="btn btn-danger">Yes</button>
+
+                                                    <button type="button" class="btn btn-secondary"
+                                                        data-dismiss="modal">No</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </ul>
+                        <button type="button" class="close btn-primary" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+
+                    </div>
+                    <div class="col-md-6 alert card p-3 alert-dismissible aos-init aos-animate" role="alert"
+                        data-aos="flip-right" data-aos-delay="400">
+
+                        <h2 class="text-center mb-3">Batch</h2>
+                        <ul>
+
+                            <a class="mb-2 text-white btn btn-primary" data-toggle="modal" data-target="#batch7">
+                                2018</a>
+                            <div class="modal fade text-dark" id="batch7" tabindex="-1" role="dialog"
+                                aria-labelledby="batch7" aria-hidden="true">
+                                <div class="modal-dialog modal-md" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="staticModalLabel">Delete 2018 </h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">×</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>
+                                                Are you sure you want to delete 2018
+                                            </p>
+                                        </div>
+                                        <form method="post" action="/basics/delete/7/db">
+                                            <input type="hidden" name="csrfmiddlewaretoken"
+                                                value="GZnIMUmjZXY6glutICELlZwh6FFH3yebcPyXWWqbxKxcIaaLAPR4LuQfZDV6pWzU">
+
+                                            <div class="modal-footer">
+
+                                                <button type="submit" class="btn btn-danger">Yes</button>
+
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-dismiss="modal">No</button>
+
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <a class="mb-2 text-white btn btn-primary" data-toggle="modal" data-target="#batch6">
+                                2019</a>
+                            <div class="modal fade text-dark" id="batch6" tabindex="-1" role="dialog"
+                                aria-labelledby="batch6" aria-hidden="true">
+                                <div class="modal-dialog modal-md" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="staticModalLabel">Delete 2019 </h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">×</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>
+                                                Are you sure you want to delete 2019
+                                            </p>
+                                        </div>
+                                        <form method="post" action="/basics/delete/6/db">
+                                            <input type="hidden" name="csrfmiddlewaretoken"
+                                                value="GZnIMUmjZXY6glutICELlZwh6FFH3yebcPyXWWqbxKxcIaaLAPR4LuQfZDV6pWzU">
+
+                                            <div class="modal-footer">
+
+                                                <button type="submit" class="btn btn-danger">Yes</button>
+
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-dismiss="modal">No</button>
+
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <a class="mb-2 text-white btn btn-primary" data-toggle="modal" data-target="#batch5">
+                                2020</a>
+                            <div class="modal fade text-dark" id="batch5" tabindex="-1" role="dialog"
+                                aria-labelledby="batch5" aria-hidden="true">
+                                <div class="modal-dialog modal-md" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="staticModalLabel">Delete 2020 </h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">×</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>
+                                                Are you sure you want to delete 2020
+                                            </p>
+                                        </div>
+                                        <form method="post" action="/basics/delete/5/db">
+                                            <input type="hidden" name="csrfmiddlewaretoken"
+                                                value="GZnIMUmjZXY6glutICELlZwh6FFH3yebcPyXWWqbxKxcIaaLAPR4LuQfZDV6pWzU">
+
+                                            <div class="modal-footer">
+
+                                                <button type="submit" class="btn btn-danger">Yes</button>
+
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-dismiss="modal">No</button>
+
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </ul>
+                        <button type="button" class="close btn-primary" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+
+                    </div>
+                </div>
+                <div class="row aos-init aos-animate" data-aos="flip-left" data-aos-delay="300">
+                    <div class="col-12 alert card p-3 alert-dismissible" role="alert">
+
+                        <h2 class="text-center mb-3">Subjects</h2>
+                        <ul>
+
+
+                            <a class="mb-2 text-white btn btn-primary" data-toggle="modal" data-target="#subject19">
+                                Biology</a>
+
+
+                            <div class="modal fade text-dark" id="subject19" tabindex="-1" role="dialog"
+                                aria-labelledby="subject19" aria-hidden="true">
+                                <div class="modal-dialog modal-md" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="staticModalLabel">Delete Biology </h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">×</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>
+                                                Are you sure you want to delete Biology
+                                            </p>
+                                        </div>
+                                        <form method="post" action="/basics/delete/19/dsj">
+                                            <input type="hidden" name="csrfmiddlewaretoken"
+                                                value="GZnIMUmjZXY6glutICELlZwh6FFH3yebcPyXWWqbxKxcIaaLAPR4LuQfZDV6pWzU">
+
+                                            <div class="modal-footer">
+
+                                                <button type="submit" class="btn btn-danger">Yes</button>
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-dismiss="modal">No</button>
+
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <a class="mb-2 text-white btn btn-primary" data-toggle="modal" data-target="#subject8">
+                                Business Management</a>
+
+
+                            <div class="modal fade text-dark" id="subject8" tabindex="-1" role="dialog"
+                                aria-labelledby="subject8" aria-hidden="true">
+                                <div class="modal-dialog modal-md" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="staticModalLabel">Delete Business Management
+                                            </h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">×</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>
+                                                Are you sure you want to delete Business Management
+                                            </p>
+                                        </div>
+                                        <form method="post" action="/basics/delete/8/dsj">
+                                            <input type="hidden" name="csrfmiddlewaretoken"
+                                                value="GZnIMUmjZXY6glutICELlZwh6FFH3yebcPyXWWqbxKxcIaaLAPR4LuQfZDV6pWzU">
+
+                                            <div class="modal-footer">
+
+                                                <button type="submit" class="btn btn-danger">Yes</button>
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-dismiss="modal">No</button>
+
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <a class="mb-2 text-white btn btn-primary" data-toggle="modal" data-target="#subject14">
+                                CRS</a>
+
+
+                            <div class="modal fade text-dark" id="subject14" tabindex="-1" role="dialog"
+                                aria-labelledby="subject14" aria-hidden="true">
+                                <div class="modal-dialog modal-md" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="staticModalLabel">Delete CRS </h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">×</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>
+                                                Are you sure you want to delete CRS
+                                            </p>
+                                        </div>
+                                        <form method="post" action="/basics/delete/14/dsj">
+                                            <input type="hidden" name="csrfmiddlewaretoken"
+                                                value="GZnIMUmjZXY6glutICELlZwh6FFH3yebcPyXWWqbxKxcIaaLAPR4LuQfZDV6pWzU">
+
+                                            <div class="modal-footer">
+
+                                                <button type="submit" class="btn btn-danger">Yes</button>
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-dismiss="modal">No</button>
+
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <a class="mb-2 text-white btn btn-primary" data-toggle="modal" data-target="#subject20">
+                                Chemestry</a>
+
+
+                            <div class="modal fade text-dark" id="subject20" tabindex="-1" role="dialog"
+                                aria-labelledby="subject20" aria-hidden="true">
+                                <div class="modal-dialog modal-md" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="staticModalLabel">Delete Chemestry </h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">×</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>
+                                                Are you sure you want to delete Chemestry
+                                            </p>
+                                        </div>
+                                        <form method="post" action="/basics/delete/20/dsj">
+                                            <input type="hidden" name="csrfmiddlewaretoken"
+                                                value="GZnIMUmjZXY6glutICELlZwh6FFH3yebcPyXWWqbxKxcIaaLAPR4LuQfZDV6pWzU">
+
+                                            <div class="modal-footer">
+
+                                                <button type="submit" class="btn btn-danger">Yes</button>
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-dismiss="modal">No</button>
+
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <a class="mb-2 text-white btn btn-primary" data-toggle="modal" data-target="#subject5">
+                                Cost Accounting</a>
+
+
+                            <div class="modal fade text-dark" id="subject5" tabindex="-1" role="dialog"
+                                aria-labelledby="subject5" aria-hidden="true">
+                                <div class="modal-dialog modal-md" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="staticModalLabel">Delete Cost Accounting </h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">×</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>
+                                                Are you sure you want to delete Cost Accounting
+                                            </p>
+                                        </div>
+                                        <form method="post" action="/basics/delete/5/dsj">
+                                            <input type="hidden" name="csrfmiddlewaretoken"
+                                                value="GZnIMUmjZXY6glutICELlZwh6FFH3yebcPyXWWqbxKxcIaaLAPR4LuQfZDV6pWzU">
+
+                                            <div class="modal-footer">
+
+                                                <button type="submit" class="btn btn-danger">Yes</button>
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-dismiss="modal">No</button>
+
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <a class="mb-2 text-white btn btn-primary" data-toggle="modal" data-target="#subject9">
+                                Economics</a>
+
+
+                            <div class="modal fade text-dark" id="subject9" tabindex="-1" role="dialog"
+                                aria-labelledby="subject9" aria-hidden="true">
+                                <div class="modal-dialog modal-md" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="staticModalLabel">Delete Economics </h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">×</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>
+                                                Are you sure you want to delete Economics
+                                            </p>
+                                        </div>
+                                        <form method="post" action="/basics/delete/9/dsj">
+                                            <input type="hidden" name="csrfmiddlewaretoken"
+                                                value="GZnIMUmjZXY6glutICELlZwh6FFH3yebcPyXWWqbxKxcIaaLAPR4LuQfZDV6pWzU">
+
+                                            <div class="modal-footer">
+
+                                                <button type="submit" class="btn btn-danger">Yes</button>
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-dismiss="modal">No</button>
+
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <a class="mb-2 text-white btn btn-primary" data-toggle="modal" data-target="#subject10">
+                                Elective Mathematics</a>
+
+
+                            <div class="modal fade text-dark" id="subject10" tabindex="-1" role="dialog"
+                                aria-labelledby="subject10" aria-hidden="true">
+                                <div class="modal-dialog modal-md" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="staticModalLabel">Delete Elective Mathematics
+                                            </h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">×</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>
+                                                Are you sure you want to delete Elective Mathematics
+                                            </p>
+                                        </div>
+                                        <form method="post" action="/basics/delete/10/dsj">
+                                            <input type="hidden" name="csrfmiddlewaretoken"
+                                                value="GZnIMUmjZXY6glutICELlZwh6FFH3yebcPyXWWqbxKxcIaaLAPR4LuQfZDV6pWzU">
+
+                                            <div class="modal-footer">
+
+                                                <button type="submit" class="btn btn-danger">Yes</button>
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-dismiss="modal">No</button>
+
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <a class="mb-2 text-white btn btn-primary" data-toggle="modal" data-target="#subject1">
+                                English</a>
+
+
+                            <div class="modal fade text-dark" id="subject1" tabindex="-1" role="dialog"
+                                aria-labelledby="subject1" aria-hidden="true">
+                                <div class="modal-dialog modal-md" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="staticModalLabel">Delete English </h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">×</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>
+                                                Are you sure you want to delete English
+                                            </p>
+                                        </div>
+                                        <form method="post" action="/basics/delete/1/dsj">
+                                            <input type="hidden" name="csrfmiddlewaretoken"
+                                                value="GZnIMUmjZXY6glutICELlZwh6FFH3yebcPyXWWqbxKxcIaaLAPR4LuQfZDV6pWzU">
+
+                                            <div class="modal-footer">
+
+                                                <button type="submit" class="btn btn-danger">Yes</button>
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-dismiss="modal">No</button>
+
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <a class="mb-2 text-white btn btn-primary" data-toggle="modal" data-target="#subject7">
+                                Financial Accounting</a>
+
+
+                            <div class="modal fade text-dark" id="subject7" tabindex="-1" role="dialog"
+                                aria-labelledby="subject7" aria-hidden="true">
+                                <div class="modal-dialog modal-md" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="staticModalLabel">Delete Financial Accounting
+                                            </h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">×</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>
+                                                Are you sure you want to delete Financial Accounting
+                                            </p>
+                                        </div>
+                                        <form method="post" action="/basics/delete/7/dsj">
+                                            <input type="hidden" name="csrfmiddlewaretoken"
+                                                value="GZnIMUmjZXY6glutICELlZwh6FFH3yebcPyXWWqbxKxcIaaLAPR4LuQfZDV6pWzU">
+
+                                            <div class="modal-footer">
+
+                                                <button type="submit" class="btn btn-danger">Yes</button>
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-dismiss="modal">No</button>
+
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <a class="mb-2 text-white btn btn-primary" data-toggle="modal" data-target="#subject22">
+                                Geography</a>
+
+
+                            <div class="modal fade text-dark" id="subject22" tabindex="-1" role="dialog"
+                                aria-labelledby="subject22" aria-hidden="true">
+                                <div class="modal-dialog modal-md" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="staticModalLabel">Delete Geography </h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">×</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>
+                                                Are you sure you want to delete Geography
+                                            </p>
+                                        </div>
+                                        <form method="post" action="/basics/delete/22/dsj">
+                                            <input type="hidden" name="csrfmiddlewaretoken"
+                                                value="GZnIMUmjZXY6glutICELlZwh6FFH3yebcPyXWWqbxKxcIaaLAPR4LuQfZDV6pWzU">
+
+                                            <div class="modal-footer">
+
+                                                <button type="submit" class="btn btn-danger">Yes</button>
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-dismiss="modal">No</button>
+
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <a class="mb-2 text-white btn btn-primary" data-toggle="modal" data-target="#subject17">
+                                Government</a>
+
+
+                            <div class="modal fade text-dark" id="subject17" tabindex="-1" role="dialog"
+                                aria-labelledby="subject17" aria-hidden="true">
+                                <div class="modal-dialog modal-md" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="staticModalLabel">Delete Government </h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">×</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>
+                                                Are you sure you want to delete Government
+                                            </p>
+                                        </div>
+                                        <form method="post" action="/basics/delete/17/dsj">
+                                            <input type="hidden" name="csrfmiddlewaretoken"
+                                                value="GZnIMUmjZXY6glutICELlZwh6FFH3yebcPyXWWqbxKxcIaaLAPR4LuQfZDV6pWzU">
+
+                                            <div class="modal-footer">
+
+                                                <button type="submit" class="btn btn-danger">Yes</button>
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-dismiss="modal">No</button>
+
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <a class="mb-2 text-white btn btn-primary" data-toggle="modal" data-target="#subject13">
+                                History</a>
+
+
+                            <div class="modal fade text-dark" id="subject13" tabindex="-1" role="dialog"
+                                aria-labelledby="subject13" aria-hidden="true">
+                                <div class="modal-dialog modal-md" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="staticModalLabel">Delete History </h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">×</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>
+                                                Are you sure you want to delete History
+                                            </p>
+                                        </div>
+                                        <form method="post" action="/basics/delete/13/dsj">
+                                            <input type="hidden" name="csrfmiddlewaretoken"
+                                                value="GZnIMUmjZXY6glutICELlZwh6FFH3yebcPyXWWqbxKxcIaaLAPR4LuQfZDV6pWzU">
+
+                                            <div class="modal-footer">
+
+                                                <button type="submit" class="btn btn-danger">Yes</button>
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-dismiss="modal">No</button>
+
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <a class="mb-2 text-white btn btn-primary" data-toggle="modal" data-target="#subject24">
+                                ICT</a>
+
+
+                            <div class="modal fade text-dark" id="subject24" tabindex="-1" role="dialog"
+                                aria-labelledby="subject24" aria-hidden="true">
+                                <div class="modal-dialog modal-md" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="staticModalLabel">Delete ICT </h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">×</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>
+                                                Are you sure you want to delete ICT
+                                            </p>
+                                        </div>
+                                        <form method="post" action="/basics/delete/24/dsj">
+                                            <input type="hidden" name="csrfmiddlewaretoken"
+                                                value="GZnIMUmjZXY6glutICELlZwh6FFH3yebcPyXWWqbxKxcIaaLAPR4LuQfZDV6pWzU">
+
+                                            <div class="modal-footer">
+
+                                                <button type="submit" class="btn btn-danger">Yes</button>
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-dismiss="modal">No</button>
+
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <a class="mb-2 text-white btn btn-primary" data-toggle="modal" data-target="#subject15">
+                                IRS</a>
+
+
+                            <div class="modal fade text-dark" id="subject15" tabindex="-1" role="dialog"
+                                aria-labelledby="subject15" aria-hidden="true">
+                                <div class="modal-dialog modal-md" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="staticModalLabel">Delete IRS </h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">×</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>
+                                                Are you sure you want to delete IRS
+                                            </p>
+                                        </div>
+                                        <form method="post" action="/basics/delete/15/dsj">
+                                            <input type="hidden" name="csrfmiddlewaretoken"
+                                                value="GZnIMUmjZXY6glutICELlZwh6FFH3yebcPyXWWqbxKxcIaaLAPR4LuQfZDV6pWzU">
+
+                                            <div class="modal-footer">
+
+                                                <button type="submit" class="btn btn-danger">Yes</button>
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-dismiss="modal">No</button>
+
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <a class="mb-2 text-white btn btn-primary" data-toggle="modal" data-target="#subject3">
+                                Integrated Science</a>
+
+
+                            <div class="modal fade text-dark" id="subject3" tabindex="-1" role="dialog"
+                                aria-labelledby="subject3" aria-hidden="true">
+                                <div class="modal-dialog modal-md" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="staticModalLabel">Delete Integrated Science
+                                            </h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">×</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>
+                                                Are you sure you want to delete Integrated Science
+                                            </p>
+                                        </div>
+                                        <form method="post" action="/basics/delete/3/dsj">
+                                            <input type="hidden" name="csrfmiddlewaretoken"
+                                                value="GZnIMUmjZXY6glutICELlZwh6FFH3yebcPyXWWqbxKxcIaaLAPR4LuQfZDV6pWzU">
+
+                                            <div class="modal-footer">
+
+                                                <button type="submit" class="btn btn-danger">Yes</button>
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-dismiss="modal">No</button>
+
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <a class="mb-2 text-white btn btn-primary" data-toggle="modal" data-target="#subject16">
+                                Literature</a>
+
+
+                            <div class="modal fade text-dark" id="subject16" tabindex="-1" role="dialog"
+                                aria-labelledby="subject16" aria-hidden="true">
+                                <div class="modal-dialog modal-md" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="staticModalLabel">Delete Literature </h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">×</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>
+                                                Are you sure you want to delete Literature
+                                            </p>
+                                        </div>
+                                        <form method="post" action="/basics/delete/16/dsj">
+                                            <input type="hidden" name="csrfmiddlewaretoken"
+                                                value="GZnIMUmjZXY6glutICELlZwh6FFH3yebcPyXWWqbxKxcIaaLAPR4LuQfZDV6pWzU">
+
+                                            <div class="modal-footer">
+
+                                                <button type="submit" class="btn btn-danger">Yes</button>
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-dismiss="modal">No</button>
+
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <a class="mb-2 text-white btn btn-primary" data-toggle="modal" data-target="#subject21">
+                                Management In Living</a>
+
+
+                            <div class="modal fade text-dark" id="subject21" tabindex="-1" role="dialog"
+                                aria-labelledby="subject21" aria-hidden="true">
+                                <div class="modal-dialog modal-md" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="staticModalLabel">Delete Management In Living
+                                            </h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">×</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>
+                                                Are you sure you want to delete Management In Living
+                                            </p>
+                                        </div>
+                                        <form method="post" action="/basics/delete/21/dsj">
+                                            <input type="hidden" name="csrfmiddlewaretoken"
+                                                value="GZnIMUmjZXY6glutICELlZwh6FFH3yebcPyXWWqbxKxcIaaLAPR4LuQfZDV6pWzU">
+
+                                            <div class="modal-footer">
+
+                                                <button type="submit" class="btn btn-danger">Yes</button>
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-dismiss="modal">No</button>
+
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <a class="mb-2 text-white btn btn-primary" data-toggle="modal" data-target="#subject2">
+                                Mathematics</a>
+
+
+                            <div class="modal fade text-dark" id="subject2" tabindex="-1" role="dialog"
+                                aria-labelledby="subject2" aria-hidden="true">
+                                <div class="modal-dialog modal-md" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="staticModalLabel">Delete Mathematics </h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">×</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>
+                                                Are you sure you want to delete Mathematics
+                                            </p>
+                                        </div>
+                                        <form method="post" action="/basics/delete/2/dsj">
+                                            <input type="hidden" name="csrfmiddlewaretoken"
+                                                value="GZnIMUmjZXY6glutICELlZwh6FFH3yebcPyXWWqbxKxcIaaLAPR4LuQfZDV6pWzU">
+
+                                            <div class="modal-footer">
+
+                                                <button type="submit" class="btn btn-danger">Yes</button>
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-dismiss="modal">No</button>
+
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <a class="mb-2 text-white btn btn-primary" data-toggle="modal" data-target="#subject23">
+                                PE</a>
+
+
+                            <div class="modal fade text-dark" id="subject23" tabindex="-1" role="dialog"
+                                aria-labelledby="subject23" aria-hidden="true">
+                                <div class="modal-dialog modal-md" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="staticModalLabel">Delete PE </h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">×</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>
+                                                Are you sure you want to delete PE
+                                            </p>
+                                        </div>
+                                        <form method="post" action="/basics/delete/23/dsj">
+                                            <input type="hidden" name="csrfmiddlewaretoken"
+                                                value="GZnIMUmjZXY6glutICELlZwh6FFH3yebcPyXWWqbxKxcIaaLAPR4LuQfZDV6pWzU">
+
+                                            <div class="modal-footer">
+
+                                                <button type="submit" class="btn btn-danger">Yes</button>
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-dismiss="modal">No</button>
+
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <a class="mb-2 text-white btn btn-primary" data-toggle="modal" data-target="#subject18">
+                                Physics</a>
+
+
+                            <div class="modal fade text-dark" id="subject18" tabindex="-1" role="dialog"
+                                aria-labelledby="subject18" aria-hidden="true">
+                                <div class="modal-dialog modal-md" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="staticModalLabel">Delete Physics </h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">×</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>
+                                                Are you sure you want to delete Physics
+                                            </p>
+                                        </div>
+                                        <form method="post" action="/basics/delete/18/dsj">
+                                            <input type="hidden" name="csrfmiddlewaretoken"
+                                                value="GZnIMUmjZXY6glutICELlZwh6FFH3yebcPyXWWqbxKxcIaaLAPR4LuQfZDV6pWzU">
+
+                                            <div class="modal-footer">
+
+                                                <button type="submit" class="btn btn-danger">Yes</button>
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-dismiss="modal">No</button>
+
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <a class="mb-2 text-white btn btn-primary" data-toggle="modal" data-target="#subject4">
+                                Social Studies</a>
+
+
+                            <div class="modal fade text-dark" id="subject4" tabindex="-1" role="dialog"
+                                aria-labelledby="subject4" aria-hidden="true">
+                                <div class="modal-dialog modal-md" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="staticModalLabel">Delete Social Studies </h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">×</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>
+                                                Are you sure you want to delete Social Studies
+                                            </p>
+                                        </div>
+                                        <form method="post" action="/basics/delete/4/dsj">
+                                            <input type="hidden" name="csrfmiddlewaretoken"
+                                                value="GZnIMUmjZXY6glutICELlZwh6FFH3yebcPyXWWqbxKxcIaaLAPR4LuQfZDV6pWzU">
+
+                                            <div class="modal-footer">
+
+                                                <button type="submit" class="btn btn-danger">Yes</button>
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-dismiss="modal">No</button>
+
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </ul>
+                        <button type="button" class="close btn-primary" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+
+                    </div>
+
+                </div>
+                <div class="row aos-init aos-animate" data-aos="flip-left" data-aos-delay="400">
+                    <div class="col-12 alert card p-3 alert-dismissible" role="alert">
+
+                        <h2 class="text-center mb-3">Results</h2>
+                        <ul>
+
+
+                            <a class="mb-2 text-white btn btn-primary" data-toggle="modal" data-target="#resultfor1">
+                                1st Semester 2020/2021 results</a>
+
+                            <div class="modal fade" id="resultfor1" tabindex="-1" role="dialog"
+                                aria-labelledby="resultfor1" aria-hidden="true">
+                                <div class="modal-dialog modal-md" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="staticModalLabel">Delete 1st Semester 2020/2021
+                                                results </h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">×</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>
+                                                Are you sure you want to delete 1st Semester 2020/2021 results
+                                            </p>
+                                        </div>
+                                        <form method="post" action="/basics/delete/1/dr">
+                                            <input type="hidden" name="csrfmiddlewaretoken"
+                                                value="GZnIMUmjZXY6glutICELlZwh6FFH3yebcPyXWWqbxKxcIaaLAPR4LuQfZDV6pWzU">
+
+                                            <div class="modal-footer">
+
+                                                <button type="submit" class="btn btn-danger">Yes</button>
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-dismiss="modal">No</button>
+
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+                            <a class="mb-2 text-white btn btn-primary" data-toggle="modal" data-target="#resultfor2">
+                                2nd Semester 2020/2021 results</a>
+
+                            <div class="modal fade" id="resultfor2" tabindex="-1" role="dialog"
+                                aria-labelledby="resultfor2" aria-hidden="true">
+                                <div class="modal-dialog modal-md" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="staticModalLabel">Delete 2nd Semester 2020/2021
+                                                results </h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">×</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>
+                                                Are you sure you want to delete 2nd Semester 2020/2021 results
+                                            </p>
+                                        </div>
+                                        <form method="post" action="/basics/delete/2/dr">
+                                            <input type="hidden" name="csrfmiddlewaretoken"
+                                                value="GZnIMUmjZXY6glutICELlZwh6FFH3yebcPyXWWqbxKxcIaaLAPR4LuQfZDV6pWzU">
+
+                                            <div class="modal-footer">
+
+                                                <button type="submit" class="btn btn-danger">Yes</button>
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-dismiss="modal">No</button>
+
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                        </ul>
+                        <button type="button" class="close btn-primary" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+
+                    </div>
+
+                </div>
+                <div class="row aos-init aos-animate" data-aos="flip-left" data-aos-delay="400">
+                    <div class="col-12 alert card p-3 alert-dismissible" role="alert">
+
+                        <h1 class="card-header text-center">Staff Id</h1>
+                        <div class="table-responsive">
+                            <div id="classestable_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
+                                <div class="row">
+                                    <div class="col-sm-12 col-md-6">
+                                        <div class="dataTables_length" id="classestable_length"><label>Show <select
+                                                    name="classestable_length" aria-controls="classestable"
+                                                    class="custom-select custom-select-sm form-control form-control-sm">
+                                                    <option value="10">10</option>
+                                                    <option value="25">25</option>
+                                                    <option value="50">50</option>
+                                                    <option value="100">100</option>
+                                                </select> entries</label></div>
+                                    </div>
+                                    <div class="col-sm-12 col-md-6">
+                                        <div id="classestable_filter" class="dataTables_filter"><label>Search:<input
+                                                    type="search" class="form-control form-control-sm" placeholder=""
+                                                    aria-controls="classestable"></label></div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <table id="classestable"
+                                            class="table table-bordered table-hover dataTable no-footer"
+                                            data-page-length="100" role="grid" aria-describedby="classestable_info">
+                                            <thead class="thead-light">
+                                                <tr role="row">
+                                                    <th class="sorting_asc" tabindex="0" aria-controls="classestable"
+                                                        rowspan="1" colspan="1" style="width: 412.783px;"
+                                                        aria-sort="ascending" aria-label="Staff Id Code
+                          : activate to sort column descending">Staff Id Code
+                                                    </th>
+                                                    <th class="sorting" tabindex="0" aria-controls="classestable"
+                                                        rowspan="1" colspan="1" style="width: 277.8px;"
+                                                        aria-label="Current: activate to sort column ascending">Current
+                                                    </th>
+                                                    <th class="sorting" tabindex="0" aria-controls="classestable"
+                                                        rowspan="1" colspan="1" style="width: 243.417px;"
+                                                        aria-label="Action: activate to sort column ascending">Action
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+
+
+
+
+
+
+
+
+
+                                                <tr role="row" class="odd">
+                                                    <td class="sorting_1">1 </td>
+                                                    <td>True </td>
+                                                    <td><a class="text-primary" data-toggle="modal"
+                                                            data-target="#StaffidCode14">
+                                                            <i class="fa fa-trash"></i>
+                                                        </a>
+
+
+                                                        <div class="modal fade" id="StaffidCode14" tabindex="-1"
+                                                            role="dialog" aria-labelledby="StaffidCode14"
+                                                            aria-hidden="true">
+                                                            <div class="modal-dialog modal-md" role="document">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <h5 class="modal-title" id="staticModalLabel">
+                                                                            Delete 1 </h5>
+                                                                        <button type="button" class="close"
+                                                                            data-dismiss="modal" aria-label="Close">
+                                                                            <span aria-hidden="true">×</span>
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="modal-body">
+                                                                        <p>
+                                                                            Are you sure you want to delete 1
+                                                                        </p>
+                                                                    </div>
+                                                                    <form method="post" action="/basics/delete/14/dsid">
+                                                                        <input type="hidden" name="csrfmiddlewaretoken"
+                                                                            value="GZnIMUmjZXY6glutICELlZwh6FFH3yebcPyXWWqbxKxcIaaLAPR4LuQfZDV6pWzU">
+
+                                                                        <div class="modal-footer">
+
+                                                                            <button type="submit"
+                                                                                class="btn btn-danger">Yes</button>
+                                                                            <button type="button"
+                                                                                class="btn btn-secondary"
+                                                                                data-dismiss="modal">No</button>
+
+                                                                        </div>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr role="row" class="even">
+                                                    <td class="sorting_1">2020/2021 </td>
+                                                    <td>False </td>
+                                                    <td><a class="text-primary" data-toggle="modal"
+                                                            data-target="#StaffidCode12">
+                                                            <i class="fa fa-trash"></i>
+                                                        </a>
+
+
+                                                        <div class="modal fade" id="StaffidCode12" tabindex="-1"
+                                                            role="dialog" aria-labelledby="StaffidCode12"
+                                                            aria-hidden="true">
+                                                            <div class="modal-dialog modal-md" role="document">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <h5 class="modal-title" id="staticModalLabel">
+                                                                            Delete 2020/2021 </h5>
+                                                                        <button type="button" class="close"
+                                                                            data-dismiss="modal" aria-label="Close">
+                                                                            <span aria-hidden="true">×</span>
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="modal-body">
+                                                                        <p>
+                                                                            Are you sure you want to delete 2020/2021
+                                                                        </p>
+                                                                    </div>
+                                                                    <form method="post" action="/basics/delete/12/dsid">
+                                                                        <input type="hidden" name="csrfmiddlewaretoken"
+                                                                            value="GZnIMUmjZXY6glutICELlZwh6FFH3yebcPyXWWqbxKxcIaaLAPR4LuQfZDV6pWzU">
+
+                                                                        <div class="modal-footer">
+
+                                                                            <button type="submit"
+                                                                                class="btn btn-danger">Yes</button>
+                                                                            <button type="button"
+                                                                                class="btn btn-secondary"
+                                                                                data-dismiss="modal">No</button>
+
+                                                                        </div>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr role="row" class="odd">
+                                                    <td class="sorting_1">Head </td>
+                                                    <td>False </td>
+                                                    <td><a class="text-primary" data-toggle="modal"
+                                                            data-target="#StaffidCode13">
+                                                            <i class="fa fa-trash"></i>
+                                                        </a>
+
+
+                                                        <div class="modal fade" id="StaffidCode13" tabindex="-1"
+                                                            role="dialog" aria-labelledby="StaffidCode13"
+                                                            aria-hidden="true">
+                                                            <div class="modal-dialog modal-md" role="document">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <h5 class="modal-title" id="staticModalLabel">
+                                                                            Delete Head </h5>
+                                                                        <button type="button" class="close"
+                                                                            data-dismiss="modal" aria-label="Close">
+                                                                            <span aria-hidden="true">×</span>
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="modal-body">
+                                                                        <p>
+                                                                            Are you sure you want to delete Head
+                                                                        </p>
+                                                                    </div>
+                                                                    <form method="post" action="/basics/delete/13/dsid">
+                                                                        <input type="hidden" name="csrfmiddlewaretoken"
+                                                                            value="GZnIMUmjZXY6glutICELlZwh6FFH3yebcPyXWWqbxKxcIaaLAPR4LuQfZDV6pWzU">
+
+                                                                        <div class="modal-footer">
+
+                                                                            <button type="submit"
+                                                                                class="btn btn-danger">Yes</button>
+                                                                            <button type="button"
+                                                                                class="btn btn-secondary"
+                                                                                data-dismiss="modal">No</button>
+
+                                                                        </div>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12 col-md-5">
+                                        <div class="dataTables_info" id="classestable_info" role="status"
+                                            aria-live="polite">Showing 1 to 3 of 3 entries</div>
+                                    </div>
+                                    <div class="col-sm-12 col-md-7">
+                                        <div class="dataTables_paginate paging_simple_numbers"
+                                            id="classestable_paginate">
+                                            <ul class="pagination">
+                                                <li class="paginate_button page-item previous disabled"
+                                                    id="classestable_previous"><a href="#" aria-controls="classestable"
+                                                        data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li>
+                                                <li class="paginate_button page-item active"><a href="#"
+                                                        aria-controls="classestable" data-dt-idx="1" tabindex="0"
+                                                        class="page-link">1</a></li>
+                                                <li class="paginate_button page-item next disabled"
+                                                    id="classestable_next"><a href="#" aria-controls="classestable"
+                                                        data-dt-idx="2" tabindex="0" class="page-link">Next</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" class="close btn-primary" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+
+                    </div>
+                </div>
+                <div class="row aos-init" data-aos="flip-left" data-aos-delay="400">
+                    <div class="col-12 alert card p-3 alert-dismissible" role="alert">
+
+                        <h2 class="text-center mb-3">Houses</h2>
+                        <ul>
+
+
+                            <a class="mb-2 text-white btn btn-primary" data-toggle="modal" data-target="#house1">
+                                Aggrey</a>
+
+                            <div class="modal fade" id="house1" tabindex="-1" role="dialog" aria-labelledby="house1"
+                                aria-hidden="true">
+                                <div class="modal-dialog modal-md" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="staticModalLabel">Delete Aggrey </h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">×</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>
+                                                Are you sure you want to delete Aggrey
+                                            </p>
+                                        </div>
+                                        <form method="post" action="/basics/delete/1/dh">
+                                            <input type="hidden" name="csrfmiddlewaretoken"
+                                                value="GZnIMUmjZXY6glutICELlZwh6FFH3yebcPyXWWqbxKxcIaaLAPR4LuQfZDV6pWzU">
+
+                                            <div class="modal-footer">
+
+                                                <button type="submit" class="btn btn-danger">Yes</button>
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-dismiss="modal">No</button>
+
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+                            <a class="mb-2 text-white btn btn-primary" data-toggle="modal" data-target="#house2">
+                                Gabla</a>
+
+                            <div class="modal fade" id="house2" tabindex="-1" role="dialog" aria-labelledby="house2"
+                                aria-hidden="true">
+                                <div class="modal-dialog modal-md" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="staticModalLabel">Delete Gabla </h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">×</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>
+                                                Are you sure you want to delete Gabla
+                                            </p>
+                                        </div>
+                                        <form method="post" action="/basics/delete/2/dh">
+                                            <input type="hidden" name="csrfmiddlewaretoken"
+                                                value="GZnIMUmjZXY6glutICELlZwh6FFH3yebcPyXWWqbxKxcIaaLAPR4LuQfZDV6pWzU">
+
+                                            <div class="modal-footer">
+
+                                                <button type="submit" class="btn btn-danger">Yes</button>
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-dismiss="modal">No</button>
+
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+                            <a class="mb-2 text-white btn btn-primary" data-toggle="modal" data-target="#house3">
+                                Nkurumah</a>
+
+                            <div class="modal fade" id="house3" tabindex="-1" role="dialog" aria-labelledby="house3"
+                                aria-hidden="true">
+                                <div class="modal-dialog modal-md" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="staticModalLabel">Delete Nkurumah </h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">×</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>
+                                                Are you sure you want to delete Nkurumah
+                                            </p>
+                                        </div>
+                                        <form method="post" action="/basics/delete/3/dh">
+                                            <input type="hidden" name="csrfmiddlewaretoken"
+                                                value="GZnIMUmjZXY6glutICELlZwh6FFH3yebcPyXWWqbxKxcIaaLAPR4LuQfZDV6pWzU">
+
+                                            <div class="modal-footer">
+
+                                                <button type="submit" class="btn btn-danger">Yes</button>
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-dismiss="modal">No</button>
+
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+                            <a class="mb-2 text-white btn btn-primary" data-toggle="modal" data-target="#house4">
+                                Arthur</a>
+
+                            <div class="modal fade" id="house4" tabindex="-1" role="dialog" aria-labelledby="house4"
+                                aria-hidden="true">
+                                <div class="modal-dialog modal-md" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="staticModalLabel">Delete Arthur </h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">×</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>
+                                                Are you sure you want to delete Arthur
+                                            </p>
+                                        </div>
+                                        <form method="post" action="/basics/delete/4/dh">
+                                            <input type="hidden" name="csrfmiddlewaretoken"
+                                                value="GZnIMUmjZXY6glutICELlZwh6FFH3yebcPyXWWqbxKxcIaaLAPR4LuQfZDV6pWzU">
+
+                                            <div class="modal-footer">
+
+                                                <button type="submit" class="btn btn-danger">Yes</button>
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-dismiss="modal">No</button>
+
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+                            <a class="mb-2 text-white btn btn-primary" data-toggle="modal" data-target="#house6">
+                                Princess</a>
+
+                            <div class="modal fade" id="house6" tabindex="-1" role="dialog" aria-labelledby="house6"
+                                aria-hidden="true">
+                                <div class="modal-dialog modal-md" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="staticModalLabel">Delete Princess </h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">×</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>
+                                                Are you sure you want to delete Princess
+                                            </p>
+                                        </div>
+                                        <form method="post" action="/basics/delete/6/dh">
+                                            <input type="hidden" name="csrfmiddlewaretoken"
+                                                value="GZnIMUmjZXY6glutICELlZwh6FFH3yebcPyXWWqbxKxcIaaLAPR4LuQfZDV6pWzU">
+
+                                            <div class="modal-footer">
+
+                                                <button type="submit" class="btn btn-danger">Yes</button>
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-dismiss="modal">No</button>
+
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+                            <a class="mb-2 text-white btn btn-primary" data-toggle="modal" data-target="#house7">
+                                Dakpemah</a>
+
+                            <div class="modal fade" id="house7" tabindex="-1" role="dialog" aria-labelledby="house7"
+                                aria-hidden="true">
+                                <div class="modal-dialog modal-md" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="staticModalLabel">Delete Dakpemah </h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">×</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>
+                                                Are you sure you want to delete Dakpemah
+                                            </p>
+                                        </div>
+                                        <form method="post" action="/basics/delete/7/dh">
+                                            <input type="hidden" name="csrfmiddlewaretoken"
+                                                value="GZnIMUmjZXY6glutICELlZwh6FFH3yebcPyXWWqbxKxcIaaLAPR4LuQfZDV6pWzU">
+
+                                            <div class="modal-footer">
+
+                                                <button type="submit" class="btn btn-danger">Yes</button>
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-dismiss="modal">No</button>
+
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+                            <a class="mb-2 text-white btn btn-primary" data-toggle="modal" data-target="#house8">
+                                Unity</a>
+
+                            <div class="modal fade" id="house8" tabindex="-1" role="dialog" aria-labelledby="house8"
+                                aria-hidden="true">
+                                <div class="modal-dialog modal-md" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="staticModalLabel">Delete Unity </h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">×</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>
+                                                Are you sure you want to delete Unity
+                                            </p>
+                                        </div>
+                                        <form method="post" action="/basics/delete/8/dh">
+                                            <input type="hidden" name="csrfmiddlewaretoken"
+                                                value="GZnIMUmjZXY6glutICELlZwh6FFH3yebcPyXWWqbxKxcIaaLAPR4LuQfZDV6pWzU">
+
+                                            <div class="modal-footer">
+
+                                                <button type="submit" class="btn btn-danger">Yes</button>
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-dismiss="modal">No</button>
+
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+                            <a class="mb-2 text-white btn btn-primary" data-toggle="modal" data-target="#house9">
+                                Theodosia</a>
+
+                            <div class="modal fade" id="house9" tabindex="-1" role="dialog" aria-labelledby="house9"
+                                aria-hidden="true">
+                                <div class="modal-dialog modal-md" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="staticModalLabel">Delete Theodosia </h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">×</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>
+                                                Are you sure you want to delete Theodosia
+                                            </p>
+                                        </div>
+                                        <form method="post" action="/basics/delete/9/dh">
+                                            <input type="hidden" name="csrfmiddlewaretoken"
+                                                value="GZnIMUmjZXY6glutICELlZwh6FFH3yebcPyXWWqbxKxcIaaLAPR4LuQfZDV6pWzU">
+
+                                            <div class="modal-footer">
+
+                                                <button type="submit" class="btn btn-danger">Yes</button>
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-dismiss="modal">No</button>
+
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+                            <a class="mb-2 text-white btn btn-primary" data-toggle="modal" data-target="#house10">
+                                Gbanzalung</a>
+
+                            <div class="modal fade" id="house10" tabindex="-1" role="dialog" aria-labelledby="house10"
+                                aria-hidden="true">
+                                <div class="modal-dialog modal-md" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="staticModalLabel">Delete Gbanzalung </h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">×</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>
+                                                Are you sure you want to delete Gbanzalung
+                                            </p>
+                                        </div>
+                                        <form method="post" action="/basics/delete/10/dh">
+                                            <input type="hidden" name="csrfmiddlewaretoken"
+                                                value="GZnIMUmjZXY6glutICELlZwh6FFH3yebcPyXWWqbxKxcIaaLAPR4LuQfZDV6pWzU">
+
+                                            <div class="modal-footer">
+
+                                                <button type="submit" class="btn btn-danger">Yes</button>
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-dismiss="modal">No</button>
+
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+                            <a class="mb-2 text-white btn btn-primary" data-toggle="modal" data-target="#house11">
+                                Ali</a>
+
+                            <div class="modal fade" id="house11" tabindex="-1" role="dialog" aria-labelledby="house11"
+                                aria-hidden="true">
+                                <div class="modal-dialog modal-md" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="staticModalLabel">Delete Ali </h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">×</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>
+                                                Are you sure you want to delete Ali
+                                            </p>
+                                        </div>
+                                        <form method="post" action="/basics/delete/11/dh">
+                                            <input type="hidden" name="csrfmiddlewaretoken"
+                                                value="GZnIMUmjZXY6glutICELlZwh6FFH3yebcPyXWWqbxKxcIaaLAPR4LuQfZDV6pWzU">
+
+                                            <div class="modal-footer">
+
+                                                <button type="submit" class="btn btn-danger">Yes</button>
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-dismiss="modal">No</button>
+
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                        </ul>
+                        <button type="button" class="close btn-primary" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+
+                    </div>
+
+                </div>
+                <div class="row aos-init" data-aos="flip-left" data-aos-delay="400">
+                    <div class="col-12 alert card p-3 alert-dismissible" role="alert">
+
+                        <h1 class="card-header text-center">Classes</h1>
+                        <div class="table-responsive">
+                            <table id="classestable" class="table table-bordered table-hover" data-page-length="100">
+                                <thead class="thead-light">
+                                    <tr>
+                                        <th>Program
+                                        </th>
+                                        <th>Section</th>
+                                        <th>Batch</th>
+                                        <th>track</th>
+                                        <th>Date Created</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+
+                                    <tr>
+
+                                        <td>Business </td>
+                                        <td>A</td>
+                                        <td>2018</td>
+                                        <td>Track Gold</td>
+                                        <td>Jan. 12, 2021</td>
+                                        <td><a class="text-primary" data-toggle="modal" data-target="#Class4">
+                                                <i class="fa fa-trash"></i>
+                                            </a>
+
+
+                                            <div class="modal fade" id="Class4" tabindex="-1" role="dialog"
+                                                aria-labelledby="Class4" aria-hidden="true">
+                                                <div class="modal-dialog modal-md" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="staticModalLabel">Delete
+                                                                Business A 2018 batch </h5>
+                                                            <button type="button" class="close" data-dismiss="modal"
+                                                                aria-label="Close">
+                                                                <span aria-hidden="true">×</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <p>
+                                                                Are you sure you want to delete Business A 2018 batch
+                                                            </p>
+                                                        </div>
+                                                        <form method="post" action="/basics/delete/4/dc">
+                                                            <input type="hidden" name="csrfmiddlewaretoken"
+                                                                value="GZnIMUmjZXY6glutICELlZwh6FFH3yebcPyXWWqbxKxcIaaLAPR4LuQfZDV6pWzU">
+
+                                                            <div class="modal-footer">
+
+                                                                <button type="submit"
+                                                                    class="btn btn-danger">Yes</button>
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    data-dismiss="modal">No</button>
+
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+
+                                    </tr>
+
+                                    <tr>
+
+                                        <td>General Arts </td>
+                                        <td>A</td>
+                                        <td>2018</td>
+                                        <td>None</td>
+                                        <td>Jan. 12, 2021</td>
+                                        <td><a class="text-primary" data-toggle="modal" data-target="#Class5">
+                                                <i class="fa fa-trash"></i>
+                                            </a>
+
+
+                                            <div class="modal fade" id="Class5" tabindex="-1" role="dialog"
+                                                aria-labelledby="Class5" aria-hidden="true">
+                                                <div class="modal-dialog modal-md" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="staticModalLabel">Delete General
+                                                                Arts A 2018 batch </h5>
+                                                            <button type="button" class="close" data-dismiss="modal"
+                                                                aria-label="Close">
+                                                                <span aria-hidden="true">×</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <p>
+                                                                Are you sure you want to delete General Arts A 2018
+                                                                batch
+                                                            </p>
+                                                        </div>
+                                                        <form method="post" action="/basics/delete/5/dc">
+                                                            <input type="hidden" name="csrfmiddlewaretoken"
+                                                                value="GZnIMUmjZXY6glutICELlZwh6FFH3yebcPyXWWqbxKxcIaaLAPR4LuQfZDV6pWzU">
+
+                                                            <div class="modal-footer">
+
+                                                                <button type="submit"
+                                                                    class="btn btn-danger">Yes</button>
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    data-dismiss="modal">No</button>
+
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+
+                                    </tr>
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <button type="button" class="close btn-primary" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <footer class="main-footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-6 text-right">
+                        <p>NOBISCO © 2021</p>
+                    </div>
+                    <div class="col-sm-6 text-right">
+                        <p>Develop by ATS <sup><small>tech</small></sup></p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="/static/assets/js/jquery/jquery.min.js"></script>
+    <script src="/static/assets/js/popper.js/umd/popper.min.js"> </script>
+    <script src="/static/assets/js/bootstrap.min.js"></script>
+    <script src="/static/assets/js/grasp_mobile_progress_circle-1.0.0.min.js"></script>
+    <script src="/static/assets/js/jquery.cookie/jquery.cookie.js"> </script>
+    <script src="/static/assets/js/chart.js/Chart.min.js"></script>
+    <script src="/static/assets/js/jquery-validation/jquery.validate.min.js"></script>
+    <script src="/static/assets/js/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="/static/assets/js/aos.js"></script>
+    <script src="/static/assets/js/front.js"></script>
+    <script src="/static/assets/toastr.min.js"></script>
+    <script src="/static/assets/datatables.min.js"></script>
+    <script src="/static/assets/html2pdf.bundle.min.js"></script>
+
+    <script>
+
+        (function ($) {
+            $('.clickable-row').css('cursor', 'pointer');
+            $(".clickable-row").click(function () {
+                window.location = $(this).data("href");
+            });
+        })(jQuery);
+
+        AOS.init();
+    </script>
+
+
+
+    <script>
+        $('#classestable').DataTable({
+        });
+    </script>
+
+
+
+
+
+
+</body>
+
+</html>

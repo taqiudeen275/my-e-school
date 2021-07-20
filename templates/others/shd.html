@@ -1,0 +1,39 @@
+{% extends 'home/homebase.html' %} 
+{% block content %}
+<nav class="navbar bg-transparent card">
+    <div class="container-fluid">
+        <div class="navbar-holder">
+           
+            <ul class="nav-menu list-unstyled d-flex flex-md-row">
+                <li class="nav-item">
+                    <a href="{% url 'others:basics' %}" class="btn text-dark">
+                        <i class="fa fa-list"></i> All School History
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <button type="button" data-toggle="modal" data-target="#add-sh" class="btn text-dark">
+                        <i class="fa fa-plus"></i> Add School History
+                    </button>
+                    {% include 'others/modals.html' %}
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<h1 class="text-center text-primary">{{ shd.title }}</h1>
+
+<section class="section-padding">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 card p-3 ">
+               <div class="card-body">
+                {{ shd.body|safe }}
+               </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock content %}

@@ -1,0 +1,19 @@
+<div id="add-fm" tabindex="-1" role="dialog" aria-labelledby="add-fm" aria-hidden="true"
+        class="modal fade text-left" data-backdrop="static">
+    <div role="document" class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 id="exampleModalLabel" class="modal-title">Add Form Master or Mistress</h5>
+                <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span
+                        aria-hidden="true">×</span></button>
+            </div>
+            <div class="modal-body">
+                <form action="{% url 'staff:formMaster' %}" method="POST" enctype="multipart/form-data" id="FormMaster">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <input type="submit" class="btn btn-dark" value="Save">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,130 @@
+<!-- Side Navbar -->
+{% load static %}
+<nav class="side-navbar">
+    <div class="side-navbar-wrapper">
+        <!-- Sidebar Header    -->
+        <div class="sidenav-header d-flex align-items-center justify-content-center">
+            <!-- User Info-->
+            <div class="sidenav-header-inner text-center">
+
+                <img src="{{user.photo.url}}" alt="profile picture" class="img-fluid rounded-circle">
+                <h2 class="h5">{{user.username}}</h2><span>{{user.user_type}}</span>
+            </div>
+            <!-- Small Brand information, appears on minimized sidebar-->
+            <div class="sidenav-header-logo">
+                <a href="{% url 'home:index' %}" class="brand-small text-center"> <strong>M</strong><strong class="text-primary">S</strong></a>
+            </div>
+        </div>
+        <!-- Sidebar Navigation Menus-->
+        <div class="main-menu">
+
+            <ul id="side-main-menu" class="side-menu list-unstyled">
+                <li>
+                    <a href="{% url 'home:index' %}"> <i class="icon-home"></i>Home</a>
+                </li>
+                <li>
+                    <a href="{% url 'blog:index' %}"> <i class="fa fa-feed"></i>Blog</a>
+                </li>
+                {% if user.user_type != 'guest' %}
+                <li>
+                    <a href="{% url 'others:noticeBoard' %}"> <i class="icon-padnote"></i>Notice Board</a>
+                </li>
+                {% endif %}
+                <li>
+                    <a href="{% url 'others:aboutSchool' %}"> <i class="icon-page"></i>About School</a>
+                </li>
+                <li>
+                    <a href="{% url 'others:aboutStaff' %}"> <i class="icon-user"></i>About Staff</a>
+                </li>
+                {% if user.user_type == 'student' %}
+                <li>
+                    <a href="{% url 'message:studentReportCard' %}"> <i class="icon-mail"></i>My Report Cards</a>
+                </li>
+                {% endif %}
+                {% if user.user_type == 'parent' %}
+                <li>
+                    <a href="{% url 'message:parentReportCard' %}"> <i class="icon-mail"></i>My Child(ren) Report</a>
+                </li>
+                {% endif %}
+                <li><a href="{% url 'account:profile' %}"><i class="icon-user"></i>Profile</a></li>
+                {% if user.user_type == 'staff' %}
+                {% if staff.is_form_master %}
+                <li>
+                    <a href="#fmdrop" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-book"></i>My Class</a>
+                    <ul id="fmdrop" class="collapse list-unstyled ">
+                        <li> <a href="{% url 'results:all_about' %}"><i class="fa fa-book"></i>Remarks</a>
+                        </li>
+                        <li> <a href="{% url 'results:createAbouts' %}"><i class="fa fa-pencil"></i>Remarks Entry</a>
+                        </li>
+                    </ul>
+                </li>
+                {% endif %}
+                <li>
+                    <a href="#rsdrop" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-book"></i>Results</a>
+                    <ul id="rsdrop" class="collapse list-unstyled ">
+
+                        <li> <a href="{% url 'staffUser:createResults' %}"><i class="fa fa-user-circle-o"></i>Add Results</a>
+                        </li>
+                        
+                        <li> <a href="{% url 'staffUser:allResults' %}"><i class="fa fa-user"></i>All Results</a>
+                        </li>
+                    </ul>
+                </li>
+                {% endif %}
+                {% if user.is_superuser %}
+
+                <h5 class="sidenav-heading">For Admin</h5>
+                <li> <a href="{% url 'admin:index' %}"><i class="fa fa-dashboard"></i>MS Admin</a>
+                </li>
+                
+                <li>
+                    <a href="{% url 'others:basics' %}" > <i class="fa fa-info"></i>About</a>
+                </li>
+                <li><a href="{% url 'academics:basics' %}" > <i class="fa fa-book"></i>Basics</a></li>
+                <li>
+                    <a href="#blog" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-feed"></i>Blog</a>
+                    <ul id="blog" class="collapse list-unstyled ">
+
+                        <li> <a href="{% url 'blog:post_create' %}"><i class="fa fa-plus"></i>Post Blog</a>
+                        </li>
+                        
+                        <li> <a href="{% url 'blog:createCat' %}"><i class="fa fa-plus"></i>Create Blog Categories</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#sfdrop" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-user-circle"></i>Staff</a>
+                    <ul id="sfdrop" class="collapse list-unstyled ">
+
+                        <li> <a href="{% url 'staff:formMaster' %}"><i class="fa fa-user-circle-o"></i>Form Matser</a>
+                        </li>
+                        
+                        <li> <a href="{% url 'staff:staffs' %}"><i class="fa fa-user"></i>Staff</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#studrop" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-user-circle"></i>Student</a>
+                    <ul id="studrop" class="collapse list-unstyled ">
+
+                        <li> <a href="{% url 'student:students' %}"><i class="fa fa-list"></i>Students</a>
+                        </li>
+                        
+                        <li> <a href="{% url 'studentUser:allstudentsId' %}"><i class="fa fa-list"></i>All ID</a>
+                        </li>
+                    </ul>
+                </li>
+                
+                 <li>
+                    <a href="{% url 'results:home' %}"> <i class="fa fa-book"></i>Results</a>
+                </li>
+                {% endif %}
+                <li>
+                    <a href="{% url 'account:logout' %}"> <i class="icon-interface-windows"></i>Logout </a>
+                </li>
+
+            </ul>
+        </div>
+
+    </div>
+</nav>

@@ -1,0 +1,28 @@
+<a class="btn btn-danger" data-toggle="modal" data-target="#delete-report">
+    Delete Report Cards
+</a>
+<div class="modal fade text-dark" id="delete-report" tabindex="-1" role="dialog" aria-labelledby="about{{about.id}}"
+    aria-hidden="true">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticModalLabel">Delete Report cards by semester </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>
+                   Select the semester reports you want to delete
+                    <form action="{% url 'results:delete_report_cards' %}" class="form-inline" method="POST">
+                        <div class="form-group">
+                         {% csrf_token %}   {{ qform.academic_year }} 
+                        <button type="Proceed" class=" btn btn-sm text-danger"> Proceed <i class="fa fa-angle-right"></i></button>
+                        </div>
+                    </form>
+                </p>
+            </div>
+            
+        </div>
+    </div>
+</div>

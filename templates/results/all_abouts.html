@@ -1,0 +1,76 @@
+{% extends 'home/homebase.html' %} {% block content %}
+<nav class="navbar bg-transparent card">
+    <div class="container-fluid">
+        <div class="navbar-holder">
+           
+            <ul class="nav-menu list-unstyled d-flex flex-md-row">
+                
+                <li class="nav-item ">
+                    <form action="" class="form-inline" method="GET">
+                        <div class="form-group">
+                            <span class="form-text">Semester: </span>
+                            {{ qform.academic_year }} 
+                        <button type="submit" class=" btn btn-sm text-dark"><i class="fa fa-search"></i></button>
+                        </div>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+{% if ay %}
+<section class="section-padding">
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-header h2 text-center text-primary">
+                All My Students Remarks
+            </div>
+            <div class="card-body table-responsive">
+                <table id="studentstable" class="table table-bordered ">
+                <thead class="thead-light">
+                    <tr>
+                    <th>Student</th>
+                    <th>Conduct </th>
+                    <th>Attitude</th>
+                    <th>Interest</th>
+                    <th>Remarks</th>
+                    <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for about in abouts %}
+                    <tr>
+                        <td>{{ about.student }}</td>
+                        <td>{{ about.conduct }}</td>
+                        <td>{{ about.attitude }}</td>
+                        <td>{{ about.interest }}</td>
+                        <td>{{ about.remarks }}</td>
+                        <td>{% include 'results/deleteModal.html' %}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+                </table>
+            </div>
+        </div>
+        <a href="{% url 'results:fill_abouts' result_for %}" class="btn btn-primary">Edit</a>
+        <a href="{% url 'results:submit_remarks' result_for %}" class="btn btn-success">Submit</a>
+    </div>
+</section>
+{% else %}
+<section class="section-padding">
+    <div class="container_fluid text-center text-primary">
+        Please select a Semester/Academic year students remarks  you want to view 
+    </div>
+</section>
+{% endif %}
+
+{% endblock content %}
+
+{% block morejs %}
+    <script>
+    $('#studentstable').DataTable({
+    });
+    </script>
+
+{% endblock %}  

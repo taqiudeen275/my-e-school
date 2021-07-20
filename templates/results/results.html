@@ -1,0 +1,63 @@
+{% extends 'home/homebase.html' %}
+{% block content %}
+
+
+<section class="section-padding">
+    <div class="container-fluid">
+        
+        <div class="card">
+        <div class="card-header h2 text-center text-primary">
+           All Student Results 
+        </div>
+        <div class="card-body">
+            <table id="resultstable" class="table table-bordered">
+            <thead class="thead-light">
+                <tr>
+                <th>Student</th>
+                <th>Class</th>
+                <th>Subject</th>
+                <th>Class Score (30%) </th>
+                <th>Exam Score (70%) </th>
+                <th>Total Score (100%)</th>
+                <th>Grade</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for key, result in results.items %}
+                {% for subject in result.subjects %}
+                <tr>
+                    <td>{{result.student}}</td>
+                    <td>{{ subject.clas_s }}</td>
+                    <td>{{ subject.subject }}</td>
+                    <td>{{ subject.class_score }}</td>
+                    <td>{{ subject.exam_score }}</td>
+                    <td>{{ subject.total_score }}</td>
+                    <td>{{ subject.grade }}</td>
+                </tr>
+                {% endfor %}{% endfor %}
+            </tbody>
+            </table>
+
+        </div>
+        </div>
+    
+    </div>
+</section>
+{% endblock content %}
+{% block morejs %}
+<script>
+    $('#resultstable').DataTable({
+      "ordering": true
+    });
+
+  $("#selecter").change(function () {
+    if (this.checked) {
+      $('input[name="students"]').prop('checked', true);
+    }
+    else {
+      $('input[name="students"]').prop('checked', false);
+    }
+  });
+</script>
+
+{% endblock morejs %}

@@ -1,0 +1,35 @@
+{% extends 'home/homebase.html' %}
+{% load static %}
+{% block content %}
+<nav class="navbar bg-transparent card">
+    <div class="container-fluid">
+        <div class="navbar-holder">
+           
+            <ul class="nav-menu list-unstyled d-flex flex-md-row">
+                <li class="nav-item">
+                    <a href="{% url 'others:basics' %}" class=" btn text-dark"><i class="fa fa-list"></i> All School History</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="text-center text-primary h1 text-uppercase">school History Edit Form</div>
+
+<section class="section-padding">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 card">
+                <form action="{% url 'others:ush'  sh.id %}" method="POST" enctype="multipart/form-data" >
+                    
+                    <div class="card-body">
+                        {% csrf_token %} 
+                        {{ form.media }}
+                        {{ form.as_p }}
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

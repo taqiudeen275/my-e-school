@@ -1,0 +1,22 @@
+{% extends 'home/homebase.html' %} 
+{% block content %}
+<section class="section-padding">
+    <div class="container-fluid">
+      <div class="row">
+          <div class="col-12  p-3">
+              {% if noticeBoard %}
+              <h1 class="text-center mb-5" data-aos="flip-left" data-aos-delay="100">Notice Board</h1>
+                      {% for nb in noticeBoard %}
+                        <a href="{% url 'others:nbad' nb.id %}" class="mb-2 p-4 col-12 btn card text-left" data-aos="flip-up" data-aos-delay="500">
+                        
+                          {{nb.title}}
+                        </a>
+                      {% endfor %}
+              {% else %}
+              <p class="text-center ">No Post available on the Notice board</p> <br>
+              {% endif %}
+          </div>  
+      </div>
+    </div>
+  </section>
+    {% endblock content %}

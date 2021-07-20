@@ -1,0 +1,176 @@
+{% extends 'home/homebase.html' %} 
+{% block content %}
+{% include 'others/menubar.html' %}
+{% include 'others/modals.html' %}
+
+
+<section class="section-padding">
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-12 alert card p-3 alert-dismissible" role="alert">
+                {% if staffPositions %}
+                <h2 class='text-center mb-3'>Ranks or Positions</h2>  
+                <ul>
+                {% for item in staffPositions %}
+                    
+                        <a  class="mb-2 text-white btn btn-primary"  data-toggle="modal" data-target="#sp{{item.id}}">
+                         {{ item.name }}</a>
+                         {% include 'others/spdeleteModal.html' %}
+                    
+                {% endfor %}
+                </ul>
+                <button type="button" class="close btn-primary" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+                {% else %}
+                <div>
+                    
+                </div>
+                <p class="text-center">No Ranks or Position Available</p> <br>
+                <button type="button" data-toggle="modal" data-target="#add-sp" class="btn btn-primary">
+                    <i class="fa fa-plus"></i> Create New Position or Rank 
+                </button> 
+                {% endif %}
+            </div> 
+            
+        </div>
+       
+        <div class="row">
+            <div class="col-12 alert card p-3 alert-dismissible" role="alert">
+                {% if aboutStaff %}
+                <h1 class="card-header text-center">About Staff</h1>
+                <div class="table-responsive">
+                    <table id="aboutstaffTable" class="table table-bordered table-hover" data-page-length='100'>
+                      <thead class="thead-light">
+                        <tr>
+                          <th>Staff
+                          </th>
+                          <th>Year Employed</th>
+                          <th>Position</th>
+                          <th>Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                
+                        {% for about_staff in aboutStaff %}
+                          <tr>
+                            
+                            <td>{{ about_staff.staff }} </td>
+                            <td>{{ about_staff.year_employed }}</td>
+                            <td>{{ about_staff.position }}</td>
+                           
+                            <td>{% include 'others/asdeleteModal.html' %}
+                                <a href="{% url 'others:uas' about_staff.id %}" class="text-primary btn"><i class="fa fa-pencil"></i></a>                          
+                                <a href="{% url 'others:asd' about_staff.id %}"><i class="fa fa-eye"></i></a>
+                            </td>
+                          </tr>
+                        {% endfor %}
+                
+                      </tbody>
+                    </table>
+                </div>
+                <button type="button" class="close btn-primary" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+                {% else %}
+                <p class="text-center ">No Staff Info Available</p> <br>
+                <button type="button" data-toggle="modal" data-target="#add-as" class="btn btn-primary">
+                    <i class="fa fa-plus"></i> Create Staff About
+                </button> 
+                {% endif %}
+            </div>  
+        </div>
+        <div class="row">
+            <div class="col-12 alert card p-3 alert-dismissible" role="alert">
+                {% if noticeBoard %}
+                <h1 class="card-header text-center">Notice Board</h1>
+                <div class="table-responsive">
+                    <table id="aboutstaffTable" class="table table-bordered table-hover" data-page-length='100'>
+                      <thead class="thead-light">
+                        <tr>
+                          <th>Title</th>
+                          <th>Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                
+                        {% for nb in noticeBoard %}
+                          <tr>
+                            
+                            <td>{{ nb.title }} </td>
+                           
+                            <td>{% include 'others/nbdeleteModal.html' %}
+                                <a href="{% url 'others:unb' nb.id %}" class="text-primary btn"><i class="fa fa-pencil"></i></a>                          
+                                <a href="{% url 'others:nbd' nb.id %}"><i class="fa fa-eye"></i></a>
+                            </td>
+                          </tr>
+                        {% endfor %}
+                
+                      </tbody>
+                    </table>
+                </div>
+                <button type="button" class="close btn-primary" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+                {% else %}
+                <p class="text-center ">No Post available on the Notice board</p> <br>
+                <button type="button" data-toggle="modal" data-target="#add-nb" class="btn btn-primary">
+                    <i class="fa fa-plus"></i> Post on Notice Board
+                </button> 
+                {% endif %}
+            </div>  
+        </div>
+        <div class="row">
+            <div class="col-12 alert card p-3 alert-dismissible" role="alert">
+                {% if schoolHistory %}
+                <h1 class="card-header text-center">School History</h1>
+                <div class="table-responsive">
+                    <table id="aboutstaffTable" class="table table-bordered table-hover" data-page-length='100'>
+                      <thead class="thead-light">
+                        <tr>
+                          <th>Title</th>
+                          <th>Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                
+                        {% for sh in schoolHistory %}
+                          <tr>
+                            
+                            <td>{{ sh.title }} </td>
+                           
+                            <td>{% include 'others/shdeleteModal.html' %}
+                                <a href="{% url 'others:ush' sh.id %}" class="text-primary btn"><i class="fa fa-pencil"></i></a>                          
+                                <a href="{% url 'others:shd' sh.id %}"><i class="fa fa-eye"></i></a>
+                            </td>
+                          </tr>
+                        {% endfor %}
+                
+                      </tbody>
+                    </table>
+                </div>
+                <button type="button" class="close btn-primary" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+                {% else %}
+                <p class="text-center ">No School History available</p> <br>
+                <button type="button" data-toggle="modal" data-target="#add-sh" class="btn btn-primary">
+                    <i class="fa fa-plus"></i> Add School Histiory
+                </button> 
+                {% endif %}
+            </div>  
+        </div>
+    </div>
+</section>
+
+
+{% endblock content %}
+
+{% block morejs %}
+    <script>
+    $('#aboutstaffTable').DataTable({
+    });
+    </script>
+
+{% endblock %}  

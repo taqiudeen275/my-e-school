@@ -1,0 +1,97 @@
+{% extends 'home/homebase.html' %} 
+{% block content %}
+{% load static %}
+
+<section class="section-padding">
+    <div class="container-fluid">
+        <div class="row text-center text-primary">
+            <p>We recommed you download the file if you are using a portable device like phone</p>
+        </div>
+        <div class="card p-5 shadow" id="reportCard">
+            <div class="row mb-4">
+                <div class="col-3">
+                    
+                </div>
+                 <div class="col-lg-6 text-center">
+                    <div class="h3 text-bold">MY E-SCHOOL</div>
+                    <div class="text-uppercase">P.O box XXX, Location</div>
+                    <div class="h6 text-bold text-uppercase">Student's  Report</div>
+                </div>
+                <div class="col-3">
+                    
+                </div>
+            </div>
+           
+            <div class="row">
+                <div class="col-6">
+                    <span class="text-bold">Student ID :</span> {{student.my_id }} <br>
+                    <span class="text-bold">Full Name :</span> {{student.full_name}} <br>
+                    <span class="text-bold">Programme:</span> {{student.clas_s.name}} <br>
+                    <span class="text-bold">Class :</span> {{student.clas_s.name}} {{student.clas_s.section}} <br>
+                    <span class="text-bold">House :</span> {{student.house}} <br>
+                </div>
+                <div class="col-6 text-right">
+                    <span class="text-bold">Academic Year :</span>  {{reportCard.result_for.academic_year}}<br>
+                    <span class="text-bold">Form/Level :</span>{{student.form }} <br>
+                    <span class="text-bold">Term/Semester: </span> {{reportCard.result_for.semester}} <br>
+            
+                </div>
+            </div>
+            <div class="row mt-5 table-responsive">
+                <table class="table">
+                    <thead class="thead-light">
+                        <tr>
+                        <th>Subjects</th>
+                        <th>Class Score (30%)</th>
+                        <th>Exams Score (70%)</th>
+                        <th>Total Score (100%)</th>
+                        <th>Grade</th>
+                        <th>Position in Subject</th>
+                        <th>Remarks</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for subject in reportCard.subjects_result.all %}
+                        <tr>
+                            <td>{{ subject.subject }}</td>
+                            <td>{{ subject.class_score }}</td>
+                            <td>{{ subject.exam_score }}</td>
+                            <td>{{ subject.total_score }}</td>
+                            <td>{{ subject.grade }}</td>
+                            <td>{{ subject.position_in_subject }} </td>
+                            <td>{{ subject.remarks }} </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                    </table>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <span class="text-bold">Conduct :</span> {{reportCard.conduct }} <br>
+                    <span class="text-bold">Attitude :</span> {{reportCard.attitude}} <br>
+                    <span class="text-bold">Interest(s) :</span> {{reportCard.interest}} <br>
+                    <span class="text-bold">Form Master's/Mistres's Remarks :</span> {{reportCard.remarks}}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <button class="btn btn-primary" id="downloadpdf">Download as PDF</button>
+        </div>
+    </div>
+</section>
+
+
+{% endblock content %}
+
+{% block morejs %}
+
+<script>
+window.onload = function(){
+    document.getElementById("downloadpdf").addEventListener("click",()=>{
+        const reportCard = this.document.getElementById("reportCard");
+       
+        html2pdf().from(reportCard).save()
+    })
+}
+</script>
+{% endblock %}  

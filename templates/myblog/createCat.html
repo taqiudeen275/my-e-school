@@ -1,0 +1,28 @@
+{% extends 'home/homebase.html' %}
+{% load static %}
+{% block content %}
+
+<section class="section-padding">
+    <div class="container-fluid">
+        <div class="row">
+            <h1 class="text-center">Blog Categories</h1>
+            <div class="col-12 card p-5 m-3 rounded">
+             <form action="." method="POST"  enctype="multipart/form-data">{% csrf_token %} 
+                {{ form.as_p }}
+                <input type="submit" class="btn btn-primary" value="Save">
+            </form>   
+            </div>
+        </div>
+        <div class="row">
+            
+                {% for cat in categories %}
+                <div class="card p-2 mr-3 col-3 bg-primary text-white">{{cat}}</div>
+                {% endfor %}
+        </div>
+    </div>
+</section>
+
+
+
+{% endblock content %}
+

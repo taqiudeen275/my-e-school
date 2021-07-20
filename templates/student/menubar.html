@@ -1,0 +1,33 @@
+<nav class="navbar bg-transparent card">
+    <div class="container-fluid">
+        <div class="navbar-holder table-responsive">
+           
+            <ul class="nav-menu list-unstyled d-flex flex-md-row">
+                <li class="nav-item">
+                    <form action="" >
+                        <button class="btn  text-dark" name="all-student"><i class="fa fa-user"></i> All Students</button>
+                    </form>
+                </li>
+                <li class="nav-item">
+                    {% include 'student/search_modal.html' %}
+                </li>
+                <li class="nav-item ">
+                    <form action="" class="form-inline" method="GET">
+                        <div class="form-group">
+                            <span class="form-text">Class: </span>
+                            {{ classSearcForm.class_info }}
+                        <button type="submit" class=" btn btn-sm text-dark"><i class="fa fa-search"></i></button>
+                        </div>
+                    </form>
+                </li>
+               
+                <li class="nav-item">
+                    <button type="button" data-toggle="modal" data-target="#add-student" class="btn text-dark">
+                        <i class="fa fa-plus"></i> Add Student  
+                    </button>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,51 @@
+{% extends 'home/homebase.html' %} 
+{% block content %}
+
+
+<section class="section-padding">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 card p-3 ">
+                 
+               <div class="card-body text-center">
+                   {% if reportCards %}
+                   <h1 class="card-header text-center">My Report Cards</h1>
+                   <div class="table-responsive">
+                       <table id="stafftable" class="table table-bordered table-hover" data-page-length='100'>
+                         <thead class="thead-light">
+                           <tr>
+                             <th>Full Name</th>
+                             <th>Semester</th>
+                             <th>Position in Class</th>
+                             <th>Overall Total</th>
+                             <th>Average Score</th>
+                             <th>Action </th>
+                           </tr>
+                         </thead>
+                         <tbody>
+                           {% for item in reportCards %}
+                             <tr>
+                               <td>{{ item.student }} </td>
+                               <td>{{ item.result_for }}</td>
+                               <td>{{ item.position_in_class }}</td>
+                               <td>{{ item.overall_total }}</td>
+                               <td>{{ item.average_score }}</td>
+                               
+                               <td>
+                                    <a href="{% url 'message:reportCard' item.id %}" class="text-primary btn"><i class="fa fa-eye"></i></a> 
+                               </td>
+                             </tr>
+                           {% endfor %}
+                   
+                         </tbody>
+                       </table>
+                   </div>
+                    {% endif %} 
+               </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock content %}

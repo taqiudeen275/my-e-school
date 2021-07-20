@@ -1,0 +1,146 @@
+{% extends 'home/homebase.html' %} {% block content %}
+
+<div class="shadow container-fluid" style="background-image: url({{ user.photo.url }});">  
+  <div class="pt-5">
+    <img src="{{ user.photo.url }}" data-aos="flip-left" data-aos-delay="500" alt="Profile" class="card-img img-fluid rounded-circle shadow sh" style="height: 200px; width: 200px;">
+  </div>
+</div>
+<section class="section-padding">
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 p-5">
+                    <div class="text-danger ">
+                        {{ form.non_field_errors }}
+                    </div>  
+                    <div class="text-left" data-aos="zoom-in" data-aos-delay="300">
+                      <h2 class="card-title">Personal Info</h2>
+                          <p>Full Name  - <strong>{{user.full_name}} </strong> </p>  
+                          <p>Email - <strong>{{user.email}}</strong></p>
+                          <p>Gender - <strong>{{user.gender }}</strong>  </p>
+                          <p>User-Type  - <strong>{{user.user_type}}</strong></p>
+                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#reguserModal">
+                            Edit Profile
+                          </button>
+                    </div>
+                </div>
+                <div class="col-lg-6 p-5">
+                  <div class="text-danger ">
+                      {{ student_form.non_field_errors }}
+                  </div>  
+                  {% if user.user_type == 'student' %}
+                  <div class="text-left" data-aos="zoom-in" data-aos-delay="300">
+                    <h2 >Student Info</h2>
+                        <p>My Student ID - <strong>{{student.my_id }}</strong>  </p>
+                        <p>Full Name  - <strong>{{student.full_name}} </strong> </p>  
+                        <p>Date of birth - <strong>{{student.date_of_birth }}</strong>  </p>
+                        <p>houser - <strong>{{student.house }}</strong>  </p>
+                        <p>Accomodation - <strong>{{student.accomodation }}</strong>  </p>
+                        <p>Class - <strong>{{student.clas_s }}</strong>  </p>
+                        <p>Batch - <strong>{{student.batch }}</strong>  </p>
+                        <p>Class - <strong>{{student.clas_s }}</strong>  </p>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#studentForm">
+                          Edit Profile
+                        </button>
+                  </div>
+                  {% endif %}
+                  {% if user.user_type == 'parent' %}
+                  <div class="text-left" data-aos="zoom-in" data-aos-delay="300">
+                    <h2 >Parent Info</h2>
+                        <p>Student  - <strong>{% for student in parent.student.all %} {{ student }}, {% endfor %}</strong> </p>  
+                        <a href="{% url 'parentUser:register' %}">Add student</a>
+                  </div>
+                  {% endif %}
+                  {% if user.user_type == 'staff' %}
+                  <div class="text-left" data-aos="zoom-in" data-aos-delay="300">
+                    <h2>Staff Info</h2>
+                        <p>Full Name  - <strong>{{staff.first_name}} {{staff.last_name}}</strong> </p>  
+                        <p>Date joined - <strong>{{staff.date_joined }}</strong>  </p>
+                        <p>Class handled - <strong>{% for clas_s in staff.class_taught.all %}{{clas_s }}, {% endfor %}</strong>  </p>
+                        <p>Subject Teached - <strong>{{staff.subject_taught }}</strong>  </p>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staffForm">
+                          Edit 
+                        </button>
+                  </div>
+                  {% endif %}
+              </div>
+            </div>
+        </div>
+         
+    </div>
+</section>
+<div id="reguserModal" class="modal" role="dialog" aria-labelledby="regUserLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="regUserLabel">{{user}} Profile edit</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-inner">
+              <form method="POST" action="." class="text-left" data-aos="fade-in" data-aos-delay="400" enctype="multipart/form-data">{% csrf_token %}
+                {{form.as_p}}
+                
+                  <div class="form-group text-center" data-aos="fade out">
+                      <input id="register" type="submit" value="Save" class="btn btn-dark" >
+                  </div>
+              </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> 
+  {% if user.user_type == 'staff' %}
+  <div id="staffForm" class="modal" role="dialog" aria-labelledby="regUserLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="regUserLabel">{{user}} Staff's Profile edit</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-inner">
+              <form method="POST" action="{% url 'account:saveStaff' %}" class="text-left" data-aos="fade-in" data-aos-delay="400" enctype="multipart/form-data">{% csrf_token %}
+                {{staff_form.as_p}}
+                
+                  <div class="form-group text-center" data-aos="fade out">
+                      <input id="register" type="submit" value="Save" class="btn btn-dark" >
+                  </div>
+              </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> 
+  {% endif %}
+
+  {% if user.user_type == 'student' %}
+  <div id="studentForm" class="modal" role="dialog" aria-labelledby="regUserLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="regUserLabel">{{Student}} Student's Profile Edit</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-inner">
+              <form method="POST" action="{% url 'account:saveStudent' %}" class="text-left" data-aos="fade-in" data-aos-delay="400" enctype="multipart/form-data">{% csrf_token %}
+                {{student_form.as_p}}
+                
+                  <div class="form-group text-center" data-aos="fade out">
+                      <input id="register" type="submit" value="Save" class="btn btn-dark" >
+                  </div>
+              </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> 
+  {% endif %}
+{% endblock content %}

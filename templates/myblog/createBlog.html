@@ -1,0 +1,23 @@
+{% extends 'home/homebase.html' %}
+{% load static %}
+{% block content %}
+
+<section class="section-padding">
+    <div class="container-fluid">
+        <div class="row">
+            <h1 class="text-center">BLOG POST</h1>
+            <div class="col-12 card p-5 m-3 rounded">
+             <form action="." method="POST"  enctype="multipart/form-data">{% csrf_token %} 
+                {{ postForm.media }}
+                {{ postForm.as_p }}
+                <input type="submit" class="btn btn-primary" value="POST">
+            </form>   
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+{% endblock content %}
+

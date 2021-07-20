@@ -1,0 +1,33 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="page login-page">
+    <div class="container">
+      <div class="form-outer text-center d-flex align-items-center">
+        <div class="form-inner">
+          <div class="logo text-uppercase"><strong class="text-primary">My E-School</strong> <span>Staff Registration </span></div>
+          <p>One last stap to finish the registration, enter the staff identification code to verify you are a teaching staff else if you are not a staff click here to change your user type {% include 'staffUser/changeModal.html' %}.</p>
+          <div class="text-primary alert-primary">
+            {{ form.non_field_errors }}
+        </div>
+          <form action="{% url 'staffUser:verify' %}" method="POST" class="text-left form-validate">{% csrf_token %}
+           
+            <div class="form-group-material form-inline">
+                <label for="user-type" class="label-material">Id Code </label>
+                {{form.staff_id }}
+            </div>
+           
+            <div class="form-group text-center">
+              <input id="register" type="submit" value="Register" class="btn btn-primary">
+            </div>
+        </div>
+        <div class="copyrights text-center">
+          <p>Developed by <a href="#" class="external">ATS tech</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+  

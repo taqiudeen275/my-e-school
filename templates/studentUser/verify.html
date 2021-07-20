@@ -1,0 +1,28 @@
+{% extends 'home/base.html' %} {% block content %}
+
+<section class="section-padding">
+    <div class="container-fluid">
+        <div class="text-center"><strong class="text-uppercase">Confirm Your Identity</strong></div>
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6 card p-5 m-5 shadow"> 
+                <h2 class="text-primary">{{student.full_name}}'s Student Info</h2>
+                <br>
+                        <p>My Student ID - <strong class="text-primary">{{student.my_id }}</strong>  </p>
+                        <p>Full Name  - <strong class="text-primary">{{student.full_name}} </strong> </p>  
+                        <p>Date of birth - <strong class="text-primary">{{student.date_of_birth }}</strong>  </p>
+                        <p>houser - <strong class="text-primary">{{student.house }}</strong>  </p>
+                        <p>Accomodation - <strong class="text-primary">{{student.accomodation }}</strong>  </p>
+                        <p>Class - <strong class="text-primary">{{student.clas_s }}</strong>  </p>
+                        <p>Batch/Year joined - <strong class="text-primary">{{student.batch }}</strong>  </p>
+                        <p>Class - <strong class="text-primary">{{student.clas_s }}</strong>  </p>
+                        <small class="text-muted mb-1">Looking at the Information above, is that yours? </small>
+                        <a class="btn btn-primary mb-1" href="{% url 'studentUser:complete' student.id %}">Yes Confirm</a>
+                        <a class="btn btn-danger" href="{% url 'studentUser:register' %}">No not me</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock content %}

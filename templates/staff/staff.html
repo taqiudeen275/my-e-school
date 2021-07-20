@@ -1,0 +1,76 @@
+{% extends 'home/homebase.html' %} 
+{% block content %}
+{% include 'staff/menubar.html' %}
+{% include 'staff/modals.html' %}
+
+<section class="section-padding">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 card p-3 ">
+                 
+               <div class="card-body text-center">
+
+                   {% if staff.photo %}
+                   <div class="text-right">
+                       <img src="{{ staff.photo.url }}" style="widows: 150px; height: 150px;" alt="{{staff}} photo" class="img-responsive card-thumbnail rounded">
+                   </div>
+                    {% endif %}
+                   <div class="m-3 col-10">
+                        <table  class="table table-borderless table-responsive text-left" data-page-length='100'>
+                            <tbody>
+                                {% if staff.user %}
+                                <tr>
+                                    <td class="text-bold">User account: </td>
+                                    <td>{{ staff.user }}</td>
+                                </tr>
+                                {% endif %}
+                                <tr>
+                                    <td class="text-bold">First Name: </td>
+                                    <td>{{ staff.first_name }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-bold">Last Name: </td>
+                                    <td>{{ staff.last_name }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-bold">Gender: </td>
+                                    <td>{{ staff.gender }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-bold">Phone Number: </td>
+                                    <td>{{ staff.phone_number }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-bold">Email: </td>
+                                    <td>{{ staff.email }}</td>
+                                </tr>
+                                {% if staff.date_joined %}
+                                <tr>
+                                    <td class="text-bold">Date Joined: </td>
+                                    <td>{{ staff.date_joined }}</td>
+                                </tr>
+                                {% endif %}
+                                <tr>
+                                    <td class="text-bold">Class Handle: </td>
+                                    <td>
+                                        {% for clas in staff.class_taught.all %}
+                                        {{clas}} ,
+                                        {% endfor %}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-bold">Subject Handle: </td>
+                                    <td>{{ staff.subject_taught }}</td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                   </div>
+               </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock content %}

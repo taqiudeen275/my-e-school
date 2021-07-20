@@ -1,0 +1,31 @@
+{% extends 'home/homebase.html' %} 
+{% block content %}
+<section class="section-padding">
+    <div class="container-fluid">
+      <div class="row text-center">
+              {% if am %}
+              <h1 class=" text-center" data-aos="flip-down" data-aos-delay="100">About Staff</h1>
+                      {% for asd in am %}
+                        <div class="p-2  col-md-4" data-aos="flip-left" data-aos-delay="200">
+                            {% if asd.staff.photo %}
+                                <img src="{{ asd.staff.photo.url }}" style="width:150px; height: 210px;"  class="img-responsive shadow rounded" data-aos="flip-left" data-aos-delay="600">
+                             {% endif %}
+                            <div class="card-body" data-aos="flip-left" data-aos-delay="400">
+                                <p>Full Name  - <strong>{{asd.staff.first_name}} {{asd.staff.last_name}}</strong> </p>  
+                                {% if asd.position %} 
+                                <p>Position  - <strong>{{asd.position}} </strong> </p>  
+                                {% endif %}
+                                <p>Year employed  - <strong>{{asd.year_employed}} </strong> </p> 
+                                {% if asd.discription %} 
+                                <p>Description  - <strong>{{asd.discription}} </strong> </p>  
+                                {% endif %}
+                            </div>
+                        </div>
+                      {% endfor %}
+              {% else %}
+              <p class="text-center ">No Post available on the About Staff</p> <br>
+              {% endif %}
+        </div>  
+    </div>
+  </section>
+    {% endblock content %}

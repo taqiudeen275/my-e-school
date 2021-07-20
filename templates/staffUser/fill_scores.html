@@ -1,0 +1,92 @@
+{% extends 'home/homebase.html' %}
+{% load widget_tweaks %}
+
+{% block content %}
+<section class="section-padding">
+  <div class="container-fluid">  
+    <form method="POST" action="{% url 'staffUser:save_scores' %}">
+    {% csrf_token %}
+    {{ formset.management_form}}
+    <div class="card">
+      <div class="card-header h2 text-center text-primary">
+          {{staff.subject_taught}} Results Form
+      </div>
+      <div class="card-body table-responsive">
+        <table class="table table-sm  table-hover">
+          <thead>
+            <tr>
+              <th>Student</th>
+              <th>Subject</th>
+              <th>Test 1 Score</th>
+              <th>Test 2 Score</th>
+              <th>Mid Semester Score</th>
+              <th>Class Score (30%)</th>
+              <th>Exam Mark</th>
+              <th>Exam Score (70%)</th>
+              <th>Total</th>
+              <th>Grade </th>
+              <th>Absent <input type="checkbox" id="absentall"></th>
+              <th>Delete <input type="checkbox" id="selectall"></th>
+              <th>Submitted</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for form in formset %}
+            {{ form.id}}
+              <tr>
+                <td>{{form.instance.student }}</td>
+                <td>{{form.instance.subject}}</td>
+                <td style="width: 7%;">{{form.test_1_score  | add_class:"form-control form-control-sm" }}</td>
+                <td style="width: 7%;">{{form.test_2_score | add_class:"form-control form-control-sm" }}</td>
+                <td style="width: 7%;">{{form.mid_semester_score | add_class:"form-control form-control-sm" }}</td>
+                <td style="width: 7%;">{{form.instance.class_score}}</td>
+                <td style="width: 7%;">{{form.exam_mark | add_class:"form-control form-control-sm"}} </td>
+                <td style="width: 7%;">{{form.instance.exam_score}}</td>
+                <td>{{form.instance.total_score}}</td>
+                <td>{{form.instance.grade}}</td>
+                <td >{{form.absent | add_class:"abs" }}</td>
+                <td name='todelete'>{{form.DELETE | add_class:"todelete" }}</td>
+                <td name='completed'>
+                  {% if form.submitted %}
+                  Yes
+                  {% else %}
+                  Not Yet
+                  {% endif %}
+                  
+                </td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <input type="submit" class="btn btn-primary" value="Save">
+    </form>
+  </div>
+</section>
+{% endblock content %}
+
+{% block morejs %}
+<script>
+
+$("#selectall").change(function () {
+  if (this.checked) {
+    $('input[class="todelete"]').prop('checked', true);
+  }
+  else {
+    $('input[class="todelete"]').prop('checked', false);
+  }
+});
+
+$("#absentall").change(function () {
+  if (this.checked) {
+    $('input[class="abs"]').prop('checked', true);
+  }
+  else {
+    $('input[class="abs"]').prop('checked', false);
+  }
+});
+
+
+</script>
+{% endblock morejs %}

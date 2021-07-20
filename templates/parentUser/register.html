@@ -1,0 +1,29 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="section-padding">
+    <div class="container-fluid text-center">
+       
+            <div class="col-12 ">
+                <h1 class="text-primary">
+                    Add Student
+                </h1>
+                <small class="text-primary">Enter your child's student ID to confirm you are the child's guardian, The student ID will be given to them in the school to register</small>
+            </div>
+            <p>If you are not a parent click here to change your user type {% include 'staffUser/changeModal.html' %}.</p>
+        
+            <div class="col-12 m-5">
+                <form class="form-inline " action="{% url 'parentUser:verify' %}" method="POST">
+                    {{sform}} {% csrf_token %}
+                    <input class="btn btn-primary mt-2" type="submit" value="Submit">
+                </form>
+            </div>
+            <div class="col-12">
+                <a class="text-primary btn-link" href="{% url 'account:logout' %}">Logout</a>
+            </div>
+  </div>
+</section>
+  {% endblock %}
+
+  

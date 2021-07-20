@@ -1,0 +1,21 @@
+<a data-toggle="modal" data-target="#change-status" class="btn text-primary">Change user type  
+</a>
+<div id="change-status" tabindex="-1" role="dialog" aria-labelledby="change-status" aria-hidden="true"
+        class="modal fade text-left" data-backdrop="static">
+    <div role="document" class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 id="exampleModalLabel" class="modal-title">Change User Type</h5>
+                <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span
+                        aria-hidden="true">×</span></button>
+            </div>
+            <div class="modal-body">
+                <form action="{% url 'account:changeUT' %}" method="POST" enctype="multipart/form-data" id="StaffForm">
+                    {% csrf_token %}
+                    {{ cform.as_p }}
+                    <input type="submit" class="btn btn-dark" value="Save">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

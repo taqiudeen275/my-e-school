@@ -1,0 +1,106 @@
+{% extends 'home/homebase.html' %} 
+{% block content %}
+<nav class="navbar bg-transparent card">
+    <div class="container-fluid">
+        <div class="navbar-holder">
+           
+            <ul class="nav-menu list-unstyled d-flex flex-md-row">
+                <li class="nav-item">
+                    <a href="{% url 'others:basics' %}" class="btn text-dark">
+                        <i class="fa fa-list"></i> All Staff Info  
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <button type="button" data-toggle="modal" data-target="#add-as" class="btn text-dark">
+                        <i class="fa fa-plus"></i> Create About Staff
+                    </button>
+                    {% include 'others/modals.html' %}
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<section class="section-padding">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 card p-3 ">
+                 
+               <div class="card-body text-center">
+
+                   {% if asd.staff.photo %}
+                   <div class="text-right">
+                       <img src="{{ asd.staff.photo.url }}" style="widows: 150px; height: 150px;" alt="{{staff}} photo" class="img-responsive card-thumbnail rounded">
+                   </div>
+                    {% endif %}
+                   <div class="m-3 col-10">
+                        <table  class="table table-borderless table-responsive text-left" data-page-length='100'>
+                            <tbody>
+                                {% if staff.user %}
+                                <tr>
+                                    <td class="text-bold">User account: </td>
+                                    <td>{{ asd.staff.user }}</td>
+                                </tr>
+                                {% endif %}
+                                <tr>
+                                    <td class="text-bold">First Name: </td>
+                                    <td>{{ asd.staff.first_name }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-bold">Last Name: </td>
+                                    <td>{{ asd.staff.last_name }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-bold">Gender: </td>
+                                    <td>{{ asd.staff.gender }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-bold">Phone Number: </td>
+                                    <td>{{ asd.staff.phone_number }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-bold">Email: </td>
+                                    <td>{{ asd.staff.email }}</td>
+                                </tr>
+                                {% if asd.staff.date_joined %}
+                                <tr>
+                                    <td class="text-bold">Date Joined: </td>
+                                    <td>{{ asd.staff.date_joined }}</td>
+                                </tr>
+                                {% endif %}
+                                <tr>
+                                    <td class="text-bold">Class Handle: </td>
+                                    <td>
+                                        {% for clas in asd.staff.class_taught.all %}
+                                        {{clas}} ,
+                                        {% endfor %}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-bold">Subject Handle: </td>
+                                    <td>{{ asd.staff.subject_taught }}</td>
+                                </tr>
+
+                                <tr>
+                                    <td class="text-bold">Postion: </td>
+                                    <td>{{ asd.position }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-bold">Year Employed: </td>
+                                    <td>{{ asd.year_employed }}</td>
+                                </tr> 
+                                <tr>
+                                    <td class="text-bold">discription: </td>
+                                    <td>{{ asd.discription }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                   </div>
+               </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock content %}
