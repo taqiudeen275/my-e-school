@@ -52,6 +52,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -86,16 +87,21 @@ WSGI_APPLICATION = 'myschool.wsgi.application'
 
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
+#         'ENGINE': 'django.db.backends.mysql',
+#         'USER': 'cpbzhrwwfvynsq',
+#         'PASSWORD': '69babc16e3f163d739cbf7d0142b2e6636e5792d41002857d525b1028a114894',
+#         'HOST': 'ec2-52-6-211-59.compute-1.amazonaws.com',
+#         'PORT': '5432',
 #     }
 # }
-DATABASES = {
-    'default': dj_database_url.config(
-        default=config('DATABASE_URL')
-    )
-}
+# DATABASES = {
+#     'default': dj_database_url.config(
+#         default=config('postgres://cpbzhrwwfvynsq:69babc16e3f163d739cbf7d0142b2e6636e5792d41002857d525b1028a114894@ec2-52-6-211-59.compute-1.amazonaws.com:5432/ddsar1l14pcleb')
+#     )
+# }
 
+DATABASES = {}
+DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -142,6 +148,7 @@ STATICFILES_DIRS = [
  ]
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 ACCOUNT_UNIQUE_EMAIL =True
 ACCOUNT_EMAIL_REQUIRED = False
@@ -153,3 +160,5 @@ LOGIN_URL = '/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 django_heroku.settings(locals())
+options = DATABASES['default'].get('OPTIONS', {})
+options.pop('sslmode', None)
