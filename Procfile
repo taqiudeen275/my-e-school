@@ -1,1 +1,2 @@
-web: gunicorn nobisco.wsgi --log-file -
+web: gunicorn myschool.wsgi --log-file -
+git
