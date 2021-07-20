@@ -16,4 +16,5 @@ sqlparse==0.3.0
 static3==0.7.0
 urllib3==1.25.8
 whitenoise==5.0.1
+python-decouple==3.4
 django-widget-tweaks==1.4.8
